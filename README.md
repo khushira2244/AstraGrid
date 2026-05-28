@@ -1,5 +1,8 @@
 # AstraGrid
 
+
+<img width="1408" height="768" alt="Gemini_Generated_Image_78fgd578fgd578fg" src="https://github.com/user-attachments/assets/7bd518bb-3396-4fdf-91e3-8d5f96371d2e" />
+
 **AstraGrid** is an autonomous critical-infrastructure incident reasoning agent for cyber-physical attacks, cascade analysis, and evidence-backed incident response.
 
 The project focuses on analyzing multi-sector infrastructure incidents across power-grid, water-treatment, water-distribution, network/ICS, and endpoint-forensic layers.
