@@ -61,3 +61,13 @@ cache/
 *.h5
 *.pt
 *.pth
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+
+data/raw/
+data/inbox/
+
+.DS_Store
