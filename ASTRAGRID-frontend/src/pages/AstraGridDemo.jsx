@@ -3,11 +3,11 @@ import styles from './AstraGridDemo.module.css';
 
 /* ── DATA ── */
 const VB_ROWS = [
-  { name: 'Direct Water Cyberattack', pill: 'UNSUPPORTED',        cls: 'vu'  },
-  { name: 'Power-to-Water Cascade',   pill: 'PARTIALLY CONFIRMED', cls: 'vp2' },
-  { name: 'Power-Grid Evidence',      pill: 'CONFIRMED',           cls: 'vc'  },
-  { name: 'Endpoint Defense Evasion', pill: 'CONFIRMED',           cls: 'vc'  },
-  { name: 'Country Attribution',      pill: 'NOT CLAIMED',         cls: 'vi'  },
+  { name: 'Direct Water Cyberattack', pill: 'UNSUPPORTED', cls: 'vu' },
+  { name: 'Power-to-Water Cascade', pill: 'PARTIALLY CONFIRMED', cls: 'vp2' },
+  { name: 'Power-Grid Evidence', pill: 'CONFIRMED', cls: 'vc' },
+  { name: 'Endpoint Defense Evasion', pill: 'CONFIRMED', cls: 'vc' },
+  { name: 'Country Attribution', pill: 'NOT CLAIMED', cls: 'vi' },
 ];
 
 const EV_SECTIONS = [
@@ -17,14 +17,18 @@ const EV_SECTIONS = [
     eyebrow: 'Step 01 · Power Layer',
     h2: ['Power Grid', 'Evidence'],
     situation: 'A power-side event was detected in the case. AstraGrid checks the power layer before blaming the downstream water system.',
-    checks: ['Power-grid telemetry','Event classification','Power anomaly evidence','Evidence refs PWR-000322 to PWR-000331'],
+    checks: ['Power-grid telemetry', 'Event classification', 'Power anomaly evidence', 'Evidence refs PWR-000322 to PWR-000331'],
     result: 'A confirmed power-side event means the water anomaly may be downstream impact, not a direct water cyberattack.',
     tool: 'Tool: get_power_event_summary',
-    run:  'Tool run: TOOL-000002',
-    btn:  { label: 'Watch SIFT Proof →', ghost: false },
+    run: 'Tool run: TOOL-000002',
+    btn: {
+      label: 'Watch SIFT Proof →',
+      ghost: false,
+      href: 'https://vimeo.com/1201600468?share=copy&fl=sv&fe=ci',
+    },
     cards: [
-      { icon: '⚡', label: 'Status',   val: null,          valPill: { text: 'CONFIRMED', cls: 'vc' }, sub: 'Power-grid event confirmed in ASTRAGRID-001 case', subStyle: { marginTop: 8 } },
-      { icon: '📋', label: 'Sector',   val: 'Power',       valPill: null, sub: 'Evidence refs: PWR-000322 – PWR-000331' },
+      { icon: '⚡', label: 'Status', val: null, valPill: { text: 'CONFIRMED', cls: 'vc' }, sub: 'Power-grid event confirmed in ASTRAGRID-001 case', subStyle: { marginTop: 8 } },
+      { icon: '📋', label: 'Sector', val: 'Power', valPill: null, sub: 'Evidence refs: PWR-000322 – PWR-000331' },
       { icon: '🔖', label: 'Tool Run', val: 'TOOL-000002', valPill: null, sub: 'get_power_event_summary · read-only' },
     ],
     extras: [],
@@ -35,15 +39,15 @@ const EV_SECTIONS = [
     eyebrow: 'Step 02 · Water Layer',
     h2: ['Water Utility', 'Evidence'],
     situation: 'The visible symptom was a water utility anomaly. At first, this looked like a direct water cyberattack. AstraGrid checks before concluding.',
-    checks: ['SWaT water-treatment evidence','BATADAL water-distribution evidence','Water anomaly records','Whether sample proves direct water attack'],
+    checks: ['SWaT water-treatment evidence', 'BATADAL water-distribution evidence', 'Water anomaly records', 'Whether sample proves direct water attack'],
     result: 'Water evidence exists but direct water cyberattack is UNSUPPORTED. AstraGrid avoids overclaiming.',
     tool: 'Tool: get_water_event_summary',
-    run:  'Tool run: TOOL-000003',
-    btn:  { label: 'Watch Self-Correction →', ghost: false },
+    run: 'Tool run: TOOL-000003',
+    btn: { label: 'Watch Self-Correction →', ghost: false },
     cards: [
-      { icon: '💧', label: 'Water Evidence',      val: null,          valPill: { text: 'CONFIRMED',    cls: 'vc' }, sub: 'Evidence refs: SWAT-000000 – SWAT-000004', subStyle: { marginTop: 8 } },
-      { icon: '🎯', label: 'Direct Water Attack', val: null,          valPill: { text: 'UNSUPPORTED',  cls: 'vu' }, sub: 'No direct PLC or SCADA command path proven', subStyle: { marginTop: 8 } },
-      { icon: '🔖', label: 'Tool Run',            val: 'TOOL-000003', valPill: null,                              sub: 'get_water_event_summary · read-only' },
+      { icon: '💧', label: 'Water Evidence', val: null, valPill: { text: 'CONFIRMED', cls: 'vc' }, sub: 'Evidence refs: SWAT-000000 – SWAT-000004', subStyle: { marginTop: 8 } },
+      { icon: '🎯', label: 'Direct Water Attack', val: null, valPill: { text: 'UNSUPPORTED', cls: 'vu' }, sub: 'No direct PLC or SCADA command path proven', subStyle: { marginTop: 8 } },
+      { icon: '🔖', label: 'Tool Run', val: 'TOOL-000003', valPill: null, sub: 'get_water_event_summary · read-only' },
     ],
     extras: [{ red: true, label: 'Important Finding', val: 'no_water_attack_in_loaded_sample' }],
   },
@@ -53,63 +57,63 @@ const EV_SECTIONS = [
     eyebrow: 'Step 03 · Network Layer',
     h2: ['Network &', 'Endpoint'],
     situation: 'Network indicators were present on Modbus/TCP traffic. Endpoint activity may indicate operator workstation compromise or defense evasion.',
-    checks: ['NET-000295, NET-000428, NET-000562','NET-000687, NET-000788, NET-000917','END-000000 — endpoint forensics','Audit log clearing detected'],
+    checks: ['NET-000295, NET-000428, NET-000562', 'NET-000687, NET-000788, NET-000917', 'END-000000 — endpoint forensics', 'Audit log clearing detected'],
     result: 'Network indicators support investigation, but do not prove direct attribution to a water command path.',
     tool: 'Network: get_network_attack_evidence · TOOL-000004',
-    run:  'Endpoint: get_endpoint_evidence · TOOL-000005',
-    btn:  null,
+    run: 'Endpoint: get_endpoint_evidence · TOOL-000005',
+    btn: null,
     cards: [
-      { icon: '🌐', label: 'Network Attack Evidence',  val: 'Present',   valPill: null,                              sub: 'Modbus/TCP indicators — 6 evidence refs' },
-      { icon: '💻', label: 'Endpoint Defense Evasion', val: null,        valPill: { text: 'CONFIRMED', cls: 'vc' }, sub: 'Audit log clearing detected · END-000000', subStyle: { marginTop: 6 } },
+      { icon: '🌐', label: 'Network Attack Evidence', val: 'Present', valPill: null, sub: 'Modbus/TCP indicators — 6 evidence refs' },
+      { icon: '💻', label: 'Endpoint Defense Evasion', val: null, valPill: { text: 'CONFIRMED', cls: 'vc' }, sub: 'Audit log clearing detected · END-000000', subStyle: { marginTop: 6 } },
     ],
     extras: [{ red: false, amber: true, label: 'Network Conclusion', val: 'Supports investigation · not direct attribution' }],
   },
 ];
 
 const TL_STEPS = [
-  { num: '01', title: 'Initial Hypothesis',   body: 'Direct water cyberattack — based on the first visible symptom being a water utility anomaly.',                        badge: 'HYPOTHESIS SET',     badgeCls: 'tbRed'   },
-  { num: '02', title: 'Gap Detection',        body: 'Network evidence did not prove direct water command path. No direct PLC or SCADA path confirmed.',                   badge: 'GAP DETECTED',       badgeCls: 'tbAmber' },
-  { num: '03', title: 'Context Expansion',    body: 'Power evidence checked — power-grid event confirmed upstream from the water anomaly.',                                badge: 'POWER CONFIRMED',    badgeCls: 'tbGreen' },
-  { num: '04', title: 'Host Evidence Check',  body: 'Endpoint defense evasion confirmed — audit log clearing detected on engineering workstation.',                        badge: 'EVASION CONFIRMED',  badgeCls: 'tbGreen' },
-  { num: '05', title: 'Dependency Check',     body: 'Power Substation 01 confirmed to supply power to Water Pump Station 03 — dependency path present.',                  badge: 'CASCADE PATH FOUND', badgeCls: 'tbGreen' },
-  { num: '06', title: 'Corrected Conclusion', body: 'Direct water attack UNSUPPORTED. Power-to-water cascade PARTIALLY CONFIRMED. Hypothesis revised.',                   badge: 'SELF-CORRECTED ↻',   badgeCls: 'tbGreen' },
+  { num: '01', title: 'Initial Hypothesis', body: 'Direct water cyberattack — based on the first visible symptom being a water utility anomaly.', badge: 'HYPOTHESIS SET', badgeCls: 'tbRed' },
+  { num: '02', title: 'Gap Detection', body: 'Network evidence did not prove direct water command path. No direct PLC or SCADA path confirmed.', badge: 'GAP DETECTED', badgeCls: 'tbAmber' },
+  { num: '03', title: 'Context Expansion', body: 'Power evidence checked — power-grid event confirmed upstream from the water anomaly.', badge: 'POWER CONFIRMED', badgeCls: 'tbGreen' },
+  { num: '04', title: 'Host Evidence Check', body: 'Endpoint defense evasion confirmed — audit log clearing detected on engineering workstation.', badge: 'EVASION CONFIRMED', badgeCls: 'tbGreen' },
+  { num: '05', title: 'Dependency Check', body: 'Power Substation 01 confirmed to supply power to Water Pump Station 03 — dependency path present.', badge: 'CASCADE PATH FOUND', badgeCls: 'tbGreen' },
+  { num: '06', title: 'Corrected Conclusion', body: 'Direct water attack UNSUPPORTED. Power-to-water cascade PARTIALLY CONFIRMED. Hypothesis revised.', badge: 'SELF-CORRECTED ↻', badgeCls: 'tbGreen' },
 ];
 
 const VS_INFO_CARDS = [
-  { icon: '↻', title: 'Self-Corrected\nHypothesis',    body: 'AstraGrid revised the initial wrong conclusion after evidence checks — without human intervention.' },
-  { icon: '✓', title: 'Evidence-Backed\nVerdicts',     body: 'Every claim is traceable to tool run IDs, evidence references, and execution logs — nothing assumed.' },
-  { icon: '⚠', title: 'No Country\nAttribution',      body: 'AstraGrid reports observed network origin indicators only. No nationality attribution is claimed from IP evidence.' },
+  { icon: '↻', title: 'Self-Corrected\nHypothesis', body: 'AstraGrid revised the initial wrong conclusion after evidence checks — without human intervention.' },
+  { icon: '✓', title: 'Evidence-Backed\nVerdicts', body: 'Every claim is traceable to tool run IDs, evidence references, and execution logs — nothing assumed.' },
+  { icon: '⚠', title: 'No Country\nAttribution', body: 'AstraGrid reports observed network origin indicators only. No nationality attribution is claimed from IP evidence.' },
 ];
 
 const VM_CLAIMS = [
-  { name: 'Direct water cyberattack', cls: 'vu',  pill: 'UNSUPPORTED'        },
-  { name: 'Power-to-water cascade',   cls: 'vp2', pill: 'PARTIALLY CONFIRMED' },
-  { name: 'Power-grid evidence',      cls: 'vc',  pill: 'CONFIRMED'           },
-  { name: 'Water utility evidence',   cls: 'vc',  pill: 'CONFIRMED'           },
-  { name: 'Endpoint defense evasion', cls: 'vc',  pill: 'CONFIRMED'           },
+  { name: 'Direct water cyberattack', cls: 'vu', pill: 'UNSUPPORTED' },
+  { name: 'Power-to-water cascade', cls: 'vp2', pill: 'PARTIALLY CONFIRMED' },
+  { name: 'Power-grid evidence', cls: 'vc', pill: 'CONFIRMED' },
+  { name: 'Water utility evidence', cls: 'vc', pill: 'CONFIRMED' },
+  { name: 'Endpoint defense evasion', cls: 'vc', pill: 'CONFIRMED' },
 ];
 
 /* ── COMPONENT ── */
 export default function AstraGridDemo({ onBack }) {
   return (
     <div>
-      <Header/>
+      <Header />
 
       {/* ══ HERO ══ */}
       <section className={styles.demoHero}>
         <div className={`${styles.wrap} ${styles.dhInner}`}>
           <div className={styles.dhLeft}>
             <div className={styles.dhTag}>Demo Case · ASTRAGRID-001</div>
-            <h1>Power-to-Water<br/><em>Cascade</em><br/>Investigation</h1>
+            <h1>Power-to-Water<br /><em>Cascade</em><br />Investigation</h1>
             <div className={styles.dhSub}>Protocol SIFT Evidence Sequencing</div>
             <p>A water anomaly looked like a direct cyberattack. AstraGrid used Protocol SIFT evidence sequencing to test that hypothesis and corrected the conclusion to a power-to-water cascade.</p>
           </div>
           <div>
             <div className={styles.verdictBoard}>
               <div className={styles.vbHeader}>
-                <span className={styles.vbDot} style={{ background: 'var(--crimson)' }}/>
-                <span className={styles.vbDot} style={{ background: 'rgba(255,176,32,.7)' }}/>
-                <span className={styles.vbDot} style={{ background: 'rgba(0,214,143,.5)' }}/>
+                <span className={styles.vbDot} style={{ background: 'var(--crimson)' }} />
+                <span className={styles.vbDot} style={{ background: 'rgba(255,176,32,.7)' }} />
+                <span className={styles.vbDot} style={{ background: 'rgba(0,214,143,.5)' }} />
                 <span className={styles.vbTitle}>Final Investigation Output</span>
               </div>
               <div className={styles.vbBody}>
@@ -145,7 +149,7 @@ export default function AstraGridDemo({ onBack }) {
             <div className={`${styles.evGrid} ${sec.flip ? styles.evGridFlip : ''}`}>
               <div className={styles.evLeft}>
                 <div className={styles.eyebrow}>{sec.eyebrow}</div>
-                <h2>{sec.h2[0]}<br/><em>{sec.h2[1]}</em></h2>
+                <h2>{sec.h2[0]}<br /><em>{sec.h2[1]}</em></h2>
                 <p className={styles.evSituation}>{sec.situation}</p>
                 <div className={styles.evChecked}>
                   {sec.checks.map(c => <div key={c} className={styles.evCheck}>{c}</div>)}
@@ -156,7 +160,12 @@ export default function AstraGridDemo({ onBack }) {
                   <span>{sec.run}</span>
                 </div>
                 {sec.btn && (
-                  <a href="#" className={`${styles.evBtn} ${sec.btn.ghost ? styles.evBtnGhost : ''}`}>
+                  <a
+                    href={sec.btn.href || "#"}
+                    target={sec.btn.href ? "_blank" : undefined}
+                    rel={sec.btn.href ? "noopener noreferrer" : undefined}
+                    className={`${styles.evBtn} ${sec.btn.ghost ? styles.evBtnGhost : ""}`}
+                  >
                     {sec.btn.label}
                   </a>
                 )}
@@ -196,7 +205,7 @@ export default function AstraGridDemo({ onBack }) {
           <div>
             <div className={styles.eyebrow}>Step 04 · Dependency Layer</div>
             <h2 style={{ fontFamily: 'var(--condensed)', fontSize: 'clamp(32px,4vw,52px)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '-.01em', marginBottom: 18, lineHeight: .95 }}>
-              Infrastructure<br/><span style={{ color: 'var(--crimson)' }}>Dependency</span> Graph
+              Infrastructure<br /><span style={{ color: 'var(--crimson)' }}>Dependency</span> Graph
             </h2>
             <p style={{ fontSize: 15, color: 'var(--pale)', maxWidth: 440, lineHeight: 1.7, marginBottom: 20 }}>
               If a power asset supplies a water asset, a power-side event can cascade into water impact. AstraGrid checks the dependency path explicitly.
@@ -220,9 +229,9 @@ export default function AstraGridDemo({ onBack }) {
               <div className={styles.dpNodeName}>Power Substation 01</div>
             </div>
             <div className={styles.dpConnector}>
-              <div className={styles.dpConnectorLine}/>
+              <div className={styles.dpConnectorLine} />
               supplies_power_to
-              <div className={styles.dpConnectorLine}/>
+              <div className={styles.dpConnectorLine} />
             </div>
             <div className={`${styles.dpNode} ${styles.dpNodeWater}`}>
               <div className={styles.dpNodeIcon}>💧</div>
@@ -319,7 +328,7 @@ export default function AstraGridDemo({ onBack }) {
             </div>
 
             <div className={styles.vmBtnRow}>
-              <a href="#" className={styles.evBtn}>Watch VM Proof →</a>
+
               <a href="#" className={`${styles.evBtn} ${styles.evBtnGhost}`}>View Full Report</a>
             </div>
           </div>
