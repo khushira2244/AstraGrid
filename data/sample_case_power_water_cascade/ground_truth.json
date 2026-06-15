@@ -1,0 +1,32 @@
+{
+  "case_id": "ASTRAGRID-001",
+  "case_name": "Power-to-Water Cascade Cyber-Physical Incident",
+  "expected_classification": "POWER_TO_WATER_CASCADE",
+  "expected_claims": [
+    {
+      "claim": "Power grid cyber event occurred",
+      "expected_status": "CONFIRMED"
+    },
+    {
+      "claim": "Water operational anomaly occurred",
+      "expected_status": "CONFIRMED"
+    },
+    {
+      "claim": "Direct water cyberattack occurred",
+      "expected_status": "UNSUPPORTED"
+    },
+    {
+      "claim": "Power-to-water cascade is plausible",
+      "expected_status": "PARTIALLY_CONFIRMED"
+    },
+    {
+      "claim": "Endpoint defense-evasion evidence exists",
+      "expected_status": "CONFIRMED"
+    }
+  ],
+  "notes": [
+    "This ground truth is used for local accuracy checks and hackathon reproducibility.",
+    "The case is a curated demonstration case assembled from public/safe datasets and normalized event outputs.",
+    "The agent should separate confirmed evidence from unsupported direct-causation claims."
+  ]
+}

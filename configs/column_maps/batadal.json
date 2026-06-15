@@ -1,0 +1,84 @@
+{
+  "dataset_id": "batadal_water_distribution",
+  "dataset_name": "BATADAL Water Distribution Cyber-Attack Dataset",
+  "raw_folder": "data/raw/batadal/extracted",
+  "primary_file": "training_dataset_2.csv",
+
+  "backend_role": "water_distribution_agent_input",
+
+  "time": {
+    "column": "DATETIME",
+    "format_observed": "DD/MM/YY HH"
+  },
+
+  "label": {
+    "column": "ATT_FLAG",
+    "classes": {
+      "0": "normal_operation",
+      "1": "water_distribution_attack"
+    }
+  },
+
+  "column_groups": {
+    "tank_levels": {
+      "description": "Water level of tanks T1-T7",
+      "include_prefixes": ["L_T"]
+    },
+
+    "pump_flows": {
+      "description": "Pump flowrate values",
+      "include_prefixes": ["F_PU"]
+    },
+
+    "pump_status": {
+      "description": "Pump binary status signals",
+      "include_prefixes": ["S_PU"]
+    },
+
+    "valve_flow_status": {
+      "description": "Actuated valve flow and status",
+      "columns": ["F_V2", "S_V2"]
+    },
+
+    "pressure_measurements": {
+      "description": "Pressure measurements at selected junctions",
+      "include_prefixes": ["P_J"]
+    }
+  },
+
+  "agent_outputs": {
+    "water_distribution_agent": [
+      "distribution_attack_classification",
+      "tank_level_anomaly_evidence",
+      "pump_flow_evidence",
+      "pump_status_evidence",
+      "valve_evidence",
+      "pressure_evidence"
+    ]
+  },
+
+  "normalized_event_mapping": {
+    "sector": "water",
+    "source_dataset": "batadal_water_distribution",
+    "asset_scope": "C-Town water distribution tanks, pumps, valve, and pressure junctions",
+    "event_type_from_label": {
+      "0": "water_distribution_normal_operation",
+      "1": "water_distribution_attack"
+    },
+    "evidence_sources": [
+      "tank_levels",
+      "pump_flows",
+      "pump_status",
+      "valve_flow_status",
+      "pressure_measurements"
+    ]
+  },
+
+  "inspection_result": {
+    "inspected_file": "training_dataset_2.csv",
+    "rows": 4177,
+    "columns": 45,
+    "label_column": "ATT_FLAG",
+    "time_column": "DATETIME"
+  }
+}

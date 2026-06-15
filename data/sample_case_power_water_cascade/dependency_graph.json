@@ -1,0 +1,52 @@
+{
+  "case_id": "ASTRAGRID-001",
+  "graph_type": "critical_infrastructure_dependency_graph",
+  "nodes": [
+    {
+      "asset_id": "POWER_SUBSTATION_01",
+      "sector": "power",
+      "asset_type": "substation",
+      "description": "Power grid asset supplying downstream utility operations"
+    },
+    {
+      "asset_id": "WATER_PUMP_STATION_03",
+      "sector": "water",
+      "asset_type": "pump_station",
+      "description": "Water distribution pump station dependent on upstream power"
+    },
+    {
+      "asset_id": "SCADA_GATEWAY_02",
+      "sector": "network",
+      "asset_type": "scada_gateway",
+      "description": "Gateway for ICS/SCADA network communication"
+    },
+    {
+      "asset_id": "ENGINEERING_WORKSTATION_05",
+      "sector": "endpoint",
+      "asset_type": "engineering_workstation",
+      "description": "Windows operator/engineering workstation"
+    }
+  ],
+  "edges": [
+    {
+      "from": "POWER_SUBSTATION_01",
+      "to": "WATER_PUMP_STATION_03",
+      "relationship": "supplies_power_to"
+    },
+    {
+      "from": "POWER_SUBSTATION_01",
+      "to": "SCADA_GATEWAY_02",
+      "relationship": "supplies_power_to"
+    },
+    {
+      "from": "ENGINEERING_WORKSTATION_05",
+      "to": "SCADA_GATEWAY_02",
+      "relationship": "can_initiate_control_or_network_activity"
+    },
+    {
+      "from": "SCADA_GATEWAY_02",
+      "to": "WATER_PUMP_STATION_03",
+      "relationship": "can_route_ics_commands_to"
+    }
+  ]
+}

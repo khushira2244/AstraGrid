@@ -1,0 +1,95 @@
+{
+  "dataset_id": "msu_ornl_power_3class",
+  "dataset_name": "MSU/ORNL Power System Cyber-Attack Dataset",
+  "raw_folder": "data/raw/power_msu_ornl/extracted",
+  "file_pattern": "data*.csv",
+
+  "backend_role": "power_grid_agent_input",
+
+  "label": {
+    "column": "marker",
+    "classes": {
+      "Attack": "cyber_attack",
+      "Natural": "natural_disturbance",
+      "NoEvents": "normal_operation"
+    }
+  },
+
+  "column_groups": {
+    "pmu_measurements": {
+      "description": "PMU/synchrophasor measurements from relays R1-R4",
+      "rules": {
+        "include_prefixes": ["R1-", "R2-", "R3-", "R4-"],
+        "include_exact": ["R1:F", "R1:DF", "R1:S", "R2:F", "R2:DF", "R2:S", "R3:F", "R3:DF", "R3:S", "R4:F", "R4:DF", "R4:S"]
+      }
+    },
+
+    "control_panel_logs": {
+      "description": "Simulated operator/control panel log signals",
+      "columns": [
+        "control_panel_log1",
+        "control_panel_log2",
+        "control_panel_log3",
+        "control_panel_log4"
+      ]
+    },
+
+    "relay_logs": {
+      "description": "Relay/IED event logs",
+      "columns": [
+        "relay1_log",
+        "relay2_log",
+        "relay3_log",
+        "relay4_log"
+      ]
+    },
+
+    "snort_ids_logs": {
+      "description": "Snort IDS alert logs",
+      "columns": [
+        "snort_log1",
+        "snort_log2",
+        "snort_log3",
+        "snort_log4"
+      ]
+    }
+  },
+
+  "agent_outputs": {
+    "power_grid_agent": [
+      "power_incident_classification",
+      "pmu_anomaly_evidence",
+      "relay_evidence",
+      "control_panel_evidence",
+      "snort_ids_evidence"
+    ]
+  },
+
+  "normalized_event_mapping": {
+    "sector": "power",
+    "source_dataset": "msu_ornl_power_3class",
+    "asset_scope": "R1-R4 relays / PMUs / breakers",
+    "event_type_from_label": {
+      "Attack": "power_cyber_attack",
+      "Natural": "power_natural_disturbance",
+      "NoEvents": "power_normal_operation"
+    },
+    "evidence_sources": [
+      "pmu_measurements",
+      "control_panel_logs",
+      "relay_logs",
+      "snort_ids_logs"
+    ]
+  },
+
+  "inspection_result": {
+    "inspected_file": "data2.csv",
+    "rows": 5069,
+    "columns": 129,
+    "class_counts": {
+      "Attack": 3525,
+      "Natural": 1222,
+      "NoEvents": 322
+    }
+  }
+}

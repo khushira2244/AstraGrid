@@ -1,0 +1,68 @@
+{
+  "dataset_id": "swat_water_treatment",
+  "dataset_name": "SWaT Secure Water Treatment Dataset",
+  "raw_folder": "data/raw/swat/extracted",
+  "primary_file": "merged.csv",
+
+  "backend_role": "water_treatment_agent_input",
+
+  "preprocessing": {
+    "strip_column_names": true,
+    "timestamp_column_original": " Timestamp",
+    "timestamp_column_normalized": "Timestamp"
+  },
+
+  "label": {
+    "column": "Normal/Attack",
+    "classes": {
+      "Normal": "normal_operation",
+      "Attack": "water_cyber_attack"
+    }
+  },
+
+  "column_groups": {
+    "sensor_measurements": {
+      "description": "Water treatment sensor measurements",
+      "include_prefixes": ["FIT", "LIT", "AIT", "PIT", "DPIT"]
+    },
+
+    "actuator_states": {
+      "description": "Water treatment actuator states including pumps, motorized valves, and UV unit",
+      "include_prefixes": ["P", "MV", "UV"]
+    }
+  },
+
+  "agent_outputs": {
+    "water_treatment_agent": [
+      "water_process_classification",
+      "sensor_anomaly_evidence",
+      "actuator_state_evidence",
+      "sensor_actuator_contradiction"
+    ]
+  },
+
+  "normalized_event_mapping": {
+    "sector": "water",
+    "source_dataset": "swat_water_treatment",
+    "asset_scope": "SWaT water treatment stages 1-6",
+    "event_type_from_label": {
+      "Normal": "water_normal_operation",
+      "Attack": "water_cyber_attack"
+    },
+    "evidence_sources": [
+      "sensor_measurements",
+      "actuator_states"
+    ]
+  },
+
+  "inspection_result": {
+    "inspected_file": "merged.csv",
+    "columns": 53,
+    "rows_inspected": 100000,
+    "label_column": "Normal/Attack",
+    "observed_class_counts_in_first_100000_rows": {
+      "Normal": 100000
+    },
+    "note": "First inspected rows are all normal. Attack rows may appear later in merged.csv or in attack.csv."
+  }
+}

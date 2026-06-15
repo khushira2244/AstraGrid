@@ -1,0 +1,57 @@
+
+{
+  "dataset_id": "mitre_attack_stix",
+  "dataset_name": "MITRE ATT&CK STIX Data",
+  "raw_folder": "data/raw/threat_intel",
+
+  "backend_role": "threat_mapping_agent_input",
+
+  "files": {
+    "ics": "mitre_ics_attack.json",
+    "enterprise": "mitre_enterprise_attack.json"
+  },
+
+  "stix_mapping": {
+    "technique_object_type": "attack-pattern",
+    "technique_name_field": "name",
+    "technique_description_field": "description",
+    "technique_id_location": "external_references[].external_id where source_name is mitre-attack",
+    "tactic_location": "kill_chain_phases[].phase_name",
+    "domain_field": "x_mitre_domains",
+    "platform_field": "x_mitre_platforms"
+  },
+
+  "agent_outputs": {
+    "threat_mapping_agent": [
+      "mitre_ics_technique_mapping",
+      "mitre_enterprise_technique_mapping",
+      "finding_to_tactic_mapping",
+      "candidate_technique_table"
+    ]
+  },
+
+  "normalized_mapping": {
+    "ics": {
+      "sector": "threat_intel",
+      "domain": "ics",
+      "example_technique": {
+        "id": "T0803",
+        "name": "Block Command Message",
+        "phase": "inhibit-response-function"
+      }
+    },
+    "enterprise": {
+      "sector": "threat_intel",
+      "domain": "enterprise",
+      "purpose": "Endpoint evidence mapping such as PowerShell, scheduled task, WMI, persistence"
+    }
+  },
+
+  "inspection_result": {
+    "ics_total_objects": 2174,
+    "ics_attack_patterns": 118,
+    "example_technique_name": "Block Command Message",
+    "example_technique_id": "T0803",
+    "example_phase": "inhibit-response-function"
+  }
+}

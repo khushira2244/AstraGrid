@@ -1,0 +1,86 @@
+
+{
+  "dataset_id": "modbus_syn_flood",
+  "dataset_name": "Modbus TCP SYN Flood Dataset",
+  "raw_folder": "data/raw/modbus_syn_flood",
+  "primary_file": "predicted_testing1a_with_original_ips_2.csv",
+
+  "backend_role": "network_plc_agent_input",
+
+  "time": {
+    "column": "Time",
+    "type": "relative_seconds"
+  },
+
+  "label": {
+    "column": "attack",
+    "classes": {
+      "0": "normal_network_traffic",
+      "1": "modbus_syn_flood_attack"
+    }
+  },
+
+  "column_groups": {
+    "network_identity": {
+      "description": "Network source and destination evidence",
+      "columns": ["Source", "Destination"]
+    },
+
+    "protocol_evidence": {
+      "description": "Protocol and packet metadata",
+      "columns": ["Protocol", "Length", "Info"]
+    },
+
+    "modbus_evidence": {
+      "description": "Modbus/TCP command/query evidence extracted from packet info",
+      "rules": {
+        "protocol_contains": "Modbus",
+        "info_keywords": ["Query", "Response", "Func", "Read Holding Registers", "Write Single Register"]
+      }
+    },
+
+    "syn_flood_evidence": {
+      "description": "TCP SYN / SYN-ACK / ACK activity for flood-style behavior",
+      "rules": {
+        "info_keywords": ["[SYN]", "[SYN, ACK]", "[ACK]"]
+      }
+    }
+  },
+
+  "agent_outputs": {
+    "network_plc_agent": [
+      "network_attack_classification",
+      "source_destination_evidence",
+      "modbus_protocol_evidence",
+      "syn_flood_evidence",
+      "suspicious_packet_timeline"
+    ]
+  },
+
+  "normalized_event_mapping": {
+    "sector": "network",
+    "source_dataset": "modbus_syn_flood",
+    "asset_scope": "Modbus/TCP ICS network communication",
+    "event_type_from_label": {
+      "0": "network_normal_traffic",
+      "1": "network_modbus_syn_flood_attack"
+    },
+    "evidence_sources": [
+      "network_identity",
+      "protocol_evidence",
+      "modbus_evidence",
+      "syn_flood_evidence"
+    ]
+  },
+
+  "inspection_result": {
+    "inspected_file": "predicted_testing1a_with_original_ips_2.csv",
+    "rows": 7067,
+    "columns": 8,
+    "label_column": "attack",
+    "class_counts": {
+      "0": 7003,
+      "1": 64
+    }
+  }
+}

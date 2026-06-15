@@ -1,0 +1,100 @@
+
+{
+  "dataset_id": "mordor_endpoint_powershell_httplistener",
+  "dataset_name": "Mordor Endpoint PowerShell HTTP Listener Sample",
+  "raw_folder": "data/raw/mordor_endpoint/extracted/psh_powershell_httplistener",
+  "primary_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+
+  "backend_role": "endpoint_forensics_agent_input",
+
+  "format": {
+    "type": "json_lines",
+    "one_event_per_line": true
+  },
+
+  "time": {
+    "primary_column": "@timestamp",
+    "secondary_column": "TimeCreated"
+  },
+
+  "host": {
+    "column": "Hostname",
+    "observed_host": "WORKSTATION5"
+  },
+
+  "event_fields": {
+    "event_id": "EventID",
+    "message": "Message",
+    "source": "SourceName",
+    "channel": "Channel",
+    "level": "Level",
+    "task": "Task"
+  },
+
+  "important_event_patterns": {
+    "audit_log_cleared": {
+      "event_id": 1102,
+      "meaning": "Audit log cleared / possible defense evasion"
+    },
+    "powershell_activity": {
+      "message_keywords": ["PowerShell", "powershell", "System.Management.Automation", "EncodedCommand"]
+    },
+    "process_or_command_activity": {
+      "message_keywords": ["Process", "CommandLine", "cmd.exe", "powershell.exe"]
+    }
+  },
+
+  "agent_outputs": {
+    "endpoint_forensics_agent": [
+      "endpoint_security_event_summary",
+      "powershell_activity_evidence",
+      "defense_evasion_evidence",
+      "host_timeline",
+      "endpoint_compromise_suspicion"
+    ]
+  },
+
+  "normalized_event_mapping": {
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset_scope": "Windows engineering workstation / operator host",
+    "event_type_rules": {
+      "EventID_1102": "endpoint_audit_log_cleared",
+      "PowerShell_keyword": "endpoint_powershell_activity",
+      "CommandLine_keyword": "endpoint_command_execution"
+    },
+    "evidence_sources": [
+      "Message",
+      "EventID",
+      "SourceName",
+      "Hostname",
+      "@timestamp",
+      "Channel"
+    ]
+  },
+
+  "inspection_result": {
+    "inspected_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+    "events": 110,
+    "format": "json_lines",
+    "observed_fields": [
+      "Message",
+      "EventID",
+      "SourceName",
+      "TimeCreated",
+      "Hostname",
+      "Task",
+      "Level",
+      "Keywords",
+      "Channel",
+      "ProviderGuid",
+      "@timestamp"
+    ],
+    "example_event": {
+      "EventID": 1102,
+      "SourceName": "Microsoft-Windows-Eventlog",
+      "Hostname": "WORKSTATION5",
+      "meaning": "The audit log was cleared"
+    }
+  }
+}

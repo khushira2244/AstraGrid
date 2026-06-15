@@ -1,0 +1,61 @@
+{
+  "case_id": "ASTRAGRID-001",
+  "case_name": "Power-to-Water Cascade Cyber-Physical Incident",
+  "case_type": "cross_infrastructure_incident_response",
+  "description": "A curated cyber-physical incident response case where a power-grid event is investigated alongside downstream water utility anomalies, network evidence, endpoint forensic evidence, dependency graph, and MITRE ATT&CK mapping.",
+  "case_goal": "Determine whether the water anomaly is isolated, directly attacked, coordinated with power compromise, or plausibly cascading from upstream power disruption.",
+  "read_only": true,
+  "created_for": "SANS Find Evil / Protocol SIFT autonomous incident response workflow",
+  "files": {
+    "power_events": {
+      "path": "power_events.json",
+      "sector": "power",
+      "purpose": "Normalized power-grid events from MSU/ORNL dataset"
+    },
+    "water_treatment_events": {
+      "path": "water_treatment_events.json",
+      "sector": "water",
+      "purpose": "Normalized SWaT water-treatment process events"
+    },
+    "water_distribution_events": {
+      "path": "water_distribution_events.json",
+      "sector": "water",
+      "purpose": "Normalized BATADAL water-distribution events"
+    },
+    "network_events": {
+      "path": "network_events.json",
+      "sector": "network",
+      "purpose": "Normalized Modbus/TCP network evidence"
+    },
+    "endpoint_events": {
+      "path": "endpoint_events.json",
+      "sector": "endpoint",
+      "purpose": "Normalized Mordor endpoint forensic evidence"
+    },
+    "mitre_techniques": {
+      "path": "mitre_techniques.json",
+      "sector": "threat_intel",
+      "purpose": "Normalized MITRE ATT&CK ICS and Enterprise techniques"
+    },
+    "dependency_graph": {
+      "path": "dependency_graph.json",
+      "sector": "cross_sector",
+      "purpose": "Infrastructure dependency graph for cascade reasoning"
+    },
+    "ground_truth": {
+      "path": "ground_truth.json",
+      "sector": "evaluation",
+      "purpose": "Expected case classification and expected claim statuses"
+    }
+  },
+  "expected_agent_behavior": [
+    "Load case manifest first",
+    "Summarize power evidence",
+    "Summarize water evidence",
+    "Check network and endpoint evidence",
+    "Check dependency graph",
+    "Avoid claiming direct water attack unless network/water evidence supports it",
+    "Mark unsupported claims explicitly",
+    "Produce evidence references for every finding"
+  ]
+}

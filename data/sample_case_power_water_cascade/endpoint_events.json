@@ -1,0 +1,3782 @@
+[
+  {
+    "event_id": "END-000000",
+    "timestamp": "2020-11-02T04:12:58.211Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_audit_log_cleared",
+    "severity": "high",
+    "confidence": 0.86,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 1102,
+      "source_name": "Microsoft-Windows-Eventlog",
+      "channel": "Security",
+      "level": "4",
+      "message": "The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tS-1-5-21-3940915590-64593676-1414006259-500\r\n\tAccount Name:\twardog\r\n\tDomain Name:\tWORKSTATION5\r\n\tLogon ID:\t0xC61D9",
+      "signals": [
+        "possible_defense_evasion",
+        "audit_log_cleared"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 0,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000001",
+    "timestamp": "2020-11-02T04:12:59.321Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 5158,
+      "source_name": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "level": "0",
+      "message": "The Windows Filtering Platform has permitted a bind to a local port.\r\n\r\nApplication Information:\r\n\tProcess ID:\t\t3428\r\n\tApplication Name:\t\\device\\harddiskvolume2\\windowsazure\\guestagent_2.7.41491.993_2020-10-08_063613\\guestagent\\windowsazureguestagent.exe\r\n\r\nNetwork Information:\r\n\tSource Address:\t\t0.0.0.0\r\n\tSource Port:\t\t52625\r\n\tProtocol:\t\t6\r\n\r\nFilter Information:\r\n\tFilter Run-Time ID:\t0\r\n\tLayer Name:\t\tResource Assignment\r\n\tLayer Run-Time ID:\t36",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 1,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000002",
+    "timestamp": "2020-11-02T04:12:59.321Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 5156,
+      "source_name": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "level": "0",
+      "message": "The Windows Filtering Platform has permitted a connection.\r\n\r\nApplication Information:\r\n\tProcess ID:\t\t3428\r\n\tApplication Name:\t\\device\\harddiskvolume2\\windowsazure\\guestagent_2.7.41491.993_2020-10-08_063613\\guestagent\\windowsazureguestagent.exe\r\n\r\nNetwork Information:\r\n\tDirection:\t\tOutbound\r\n\tSource Address:\t\t192.168.2.5\r\n\tSource Port:\t\t52625\r\n\tDestination Address:\t168.63.129.16\r\n\tDestination Port:\t\t80\r\n\tProtocol:\t\t6\r\n\r\nFilter Information:\r\n\tFilter Run-Time ID:\t69895\r\n\tLayer Name:\t\tConnect\r\n\tLayer Run-Time ID:\t48",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 2,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000003",
+    "timestamp": "2020-11-02T04:13:01.819Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 5158,
+      "source_name": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "level": "0",
+      "message": "The Windows Filtering Platform has permitted a bind to a local port.\r\n\r\nApplication Information:\r\n\tProcess ID:\t\t4\r\n\tApplication Name:\tSystem\r\n\r\nNetwork Information:\r\n\tSource Address:\t\t::\r\n\tSource Port:\t\t8000\r\n\tProtocol:\t\t6\r\n\r\nFilter Information:\r\n\tFilter Run-Time ID:\t0\r\n\tLayer Name:\t\tResource Assignment\r\n\tLayer Run-Time ID:\t36",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 3,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000004",
+    "timestamp": "2020-11-02T04:13:01.819Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 5158,
+      "source_name": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "level": "0",
+      "message": "The Windows Filtering Platform has permitted a bind to a local port.\r\n\r\nApplication Information:\r\n\tProcess ID:\t\t4\r\n\tApplication Name:\tSystem\r\n\r\nNetwork Information:\r\n\tSource Address:\t\t::\r\n\tSource Port:\t\t8000\r\n\tProtocol:\t\t6\r\n\r\nFilter Information:\r\n\tFilter Run-Time ID:\t0\r\n\tLayer Name:\t\tResource Assignment\r\n\tLayer Run-Time ID:\t38",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 4,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000005",
+    "timestamp": "2020-11-02T04:13:01.819Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 5154,
+      "source_name": "Microsoft-Windows-Security-Auditing",
+      "channel": "Security",
+      "level": "0",
+      "message": "The Windows Filtering Platform has permitted an application or service to listen on a port for incoming connections.\r\n\r\nApplication Information:\r\n\tProcess ID:\t\t4\r\n\tApplication Name:\tSystem\r\n\r\nNetwork Information:\r\n\tSource Address:\t\t::\r\n\tSource Port:\t\t8000\r\n\tProtocol:\t\t6\r\n\r\nFilter Information:\r\n\tFilter Run-Time ID:\t0\r\n\tLayer Name:\t\tListen\r\n\tLayer Run-Time ID:\t42",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 5,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000006",
+    "timestamp": "2020-11-02T04:12:57.963Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:57.961\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 6,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000007",
+    "timestamp": "2020-11-02T04:12:57.963Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:57.961\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 7,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000008",
+    "timestamp": "2020-11-02T04:12:58.165Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:12:58.164\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\JvaqbjfCbjreFuryy\\i1.0\\cbjrefuryy.rkr\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 8,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000009",
+    "timestamp": "2020-11-02T04:12:58.165Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:12:58.164\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\HRZR_PGYFRFFVBA\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 9,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000010",
+    "timestamp": "2020-11-02T04:12:58.964Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:58.961\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 10,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000011",
+    "timestamp": "2020-11-02T04:12:58.964Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:58.961\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 11,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000012",
+    "timestamp": "2020-11-02T04:12:59.744Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:59.743\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 12740\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\SYSTEM32\\ntdll.dll+30729|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 12,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000013",
+    "timestamp": "2020-11-02T04:12:59.744Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:59.743\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 12740\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\SYSTEM32\\ntdll.dll+30729|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 13,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000014",
+    "timestamp": "2020-11-02T04:12:59.744Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:59.743\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 12740\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\SYSTEM32\\ntdll.dll+30729|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 14,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000015",
+    "timestamp": "2020-11-02T04:12:59.964Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:59.961\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 15,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000016",
+    "timestamp": "2020-11-02T04:12:59.964Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:59.961\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 16,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000017",
+    "timestamp": "2020-11-02T04:13:00.010Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+10225|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 17,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000018",
+    "timestamp": "2020-11-02T04:13:00.010Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+108a0|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 18,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000019",
+    "timestamp": "2020-11-02T04:13:00.010Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+106fe|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 19,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000020",
+    "timestamp": "2020-11-02T04:13:00.010Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 6188\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+f6ba|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 20,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000021",
+    "timestamp": "2020-11-02T04:13:00.010Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 6188\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+f97f|c:\\windows\\system32\\lsm.dll+f7ad|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 21,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000022",
+    "timestamp": "2020-11-02T04:13:00.011Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 6188\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+f6ba|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 22,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000023",
+    "timestamp": "2020-11-02T04:13:00.011Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 6188\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+f97f|c:\\windows\\system32\\lsm.dll+f7ad|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 23,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000024",
+    "timestamp": "2020-11-02T04:13:00.011Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+111b6|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 24,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000025",
+    "timestamp": "2020-11-02T04:13:00.012Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f132-5f8b-1600-000000000700}\r\nTargetProcessId: 1040\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x40\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|c:\\windows\\system32\\lsm.dll+1a207|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+383b9|C:\\windows\\System32\\combase.dll+a5cff|C:\\windows\\System32\\combase.dll+8d0e3|C:\\windows\\System32\\combase.dll+8ced3|C:\\windows\\System32\\combase.dll+a9556|C:\\windows\\System32\\combase.dll+8a4fa|C:\\windows\\System32\\combase.dll+a47ed|C:\\windows\\System32\\combase.dll+401ac|C:\\windows\\System32\\combase.dll+40a11|C:\\windows\\System32\\combase.dll+421b8|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c500|C:\\windows\\System32\\RPCRT4.dll+1a71f|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 25,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000026",
+    "timestamp": "2020-11-02T04:13:00.012Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+111b6|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 26,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000027",
+    "timestamp": "2020-11-02T04:13:00.013Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f132-5f8b-1600-000000000700}\r\nTargetProcessId: 1040\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x40\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|c:\\windows\\system32\\lsm.dll+1a207|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+383b9|C:\\windows\\System32\\combase.dll+a5cff|C:\\windows\\System32\\combase.dll+8d0e3|C:\\windows\\System32\\combase.dll+8ced3|C:\\windows\\System32\\combase.dll+a9556|C:\\windows\\System32\\combase.dll+8a4fa|C:\\windows\\System32\\combase.dll+a47ed|C:\\windows\\System32\\combase.dll+401ac|C:\\windows\\System32\\combase.dll+40a11|C:\\windows\\System32\\combase.dll+421b8|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c500|C:\\windows\\System32\\RPCRT4.dll+1a71f|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 27,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000028",
+    "timestamp": "2020-11-02T04:13:00.014Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+111b6|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 28,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000029",
+    "timestamp": "2020-11-02T04:13:00.015Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.008\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1200-000000000700}\r\nSourceProcessId: 404\r\nSourceThreadId: 12880\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f137-5f8b-4c00-000000000700}\r\nTargetProcessId: 3172\r\nTargetImage: C:\\windows\\System32\\svchost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+6af15|c:\\windows\\system32\\lsm.dll+111b6|C:\\windows\\System32\\RPCRT4.dll+76a63|C:\\windows\\System32\\RPCRT4.dll+da036|C:\\windows\\System32\\RPCRT4.dll+37b7c|C:\\windows\\System32\\RPCRT4.dll+549f8|C:\\windows\\System32\\RPCRT4.dll+2c9b1|C:\\windows\\System32\\RPCRT4.dll+2c26b|C:\\windows\\System32\\RPCRT4.dll+1a8cf|C:\\windows\\System32\\RPCRT4.dll+19d7a|C:\\windows\\System32\\RPCRT4.dll+19361|C:\\windows\\System32\\RPCRT4.dll+18dce|C:\\windows\\System32\\RPCRT4.dll+16a05|C:\\windows\\SYSTEM32\\ntdll.dll+333ed|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 29,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000030",
+    "timestamp": "2020-11-02T04:13:00.018Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:00.008\r\nProcessGuid: {39e4a257-f137-5f8b-4c00-000000000700}\r\nProcessId: 3172\r\nImage: C:\\windows\\System32\\svchost.exe\r\nTargetObject: HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\VFUProvider",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 30,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000031",
+    "timestamp": "2020-11-02T04:13:00.018Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:00.008\r\nProcessGuid: {39e4a257-f137-5f8b-4c00-000000000700}\r\nProcessId: 3172\r\nImage: C:\\windows\\System32\\svchost.exe\r\nTargetObject: HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\VFUProvider\\StartTime\r\nDetails: QWORD (0x01d6b0f8-0x5c400ebe)",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 31,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000032",
+    "timestamp": "2020-11-02T04:13:00.648Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.633\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 11104\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nTargetProcessId: 1072\r\nTargetImage: C:\\windows\\Explorer.EXE\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+310c0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+30dbf|C:\\windows\\SYSTEM32\\ntdll.dll+6ba5|C:\\windows\\SYSTEM32\\ntdll.dll+67f1|C:\\windows\\SYSTEM32\\ntdll.dll+6650|C:\\windows\\SYSTEM32\\ntdll.dll+3052c|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 32,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000033",
+    "timestamp": "2020-11-02T04:13:00.657Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:00.649\r\nProcessGuid: {39e4a257-f1b1-5f8b-a500-000000000700}\r\nProcessId: 5112\r\nImage: C:\\windows\\system32\\ctfmon.exe\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Input\\Settings",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 33,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000034",
+    "timestamp": "2020-11-02T04:13:00.657Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.649\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 34,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000035",
+    "timestamp": "2020-11-02T04:13:00.657Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.649\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 35,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000036",
+    "timestamp": "2020-11-02T04:13:00.657Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.649\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 36,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000037",
+    "timestamp": "2020-11-02T04:13:00.657Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:00.649\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\JvaqbjfCbjreFuryy\\i1.0\\cbjrefuryy.rkr\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 37,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000038",
+    "timestamp": "2020-11-02T04:13:00.657Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:00.649\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\HRZR_PGYFRFFVBA\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 38,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000039",
+    "timestamp": "2020-11-02T04:13:00.668Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:00.664\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\ActivityDataModel\\ReaderRevisionInfo\\A972977C-95EC-9F21-DCC4-595CA3A0E033\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 39,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000040",
+    "timestamp": "2020-11-02T04:13:00.671Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:00.664\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\ActivityDataModel\\ReaderRevisionInfo\\A972977C-95EC-9F21-DCC4-595CA3A0E033\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 40,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000041",
+    "timestamp": "2020-11-02T04:13:00.979Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.977\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 41,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000042",
+    "timestamp": "2020-11-02T04:13:00.979Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:00.977\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 42,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000043",
+    "timestamp": "2020-11-02T04:13:01.072Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.071\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage\\AppSwitched",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 43,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000044",
+    "timestamp": "2020-11-02T04:13:01.072Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:01.071\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage\\AppSwitched\\{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\WindowsPowerShell\\v1.0\\powershell.exe\r\nDetails: DWORD (0x000000f8)",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 44,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000045",
+    "timestamp": "2020-11-02T04:13:01.084Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-fa49-000000000700}\r\nTargetProcessId: 12692\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1410\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.pcshell.dll+1d207|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 45,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000046",
+    "timestamp": "2020-11-02T04:13:01.084Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-fa49-000000000700}\r\nTargetProcessId: 12692\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+221c5|C:\\Windows\\System32\\appresolver.dll+1edcc|C:\\windows\\system32\\twinui.pcshell.dll+1d434|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 46,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000047",
+    "timestamp": "2020-11-02T04:13:01.084Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-fa49-000000000700}\r\nTargetProcessId: 12692\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+1ee93|C:\\windows\\system32\\twinui.pcshell.dll+1d434|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 47,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000048",
+    "timestamp": "2020-11-02T04:13:01.084Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.071\r\nProcessGuid: {39e4a257-f1b1-5f8b-a500-000000000700}\r\nProcessId: 5112\r\nImage: C:\\windows\\system32\\ctfmon.exe\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Input\\Settings",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 48,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000049",
+    "timestamp": "2020-11-02T04:13:01.084Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-fa49-000000000700}\r\nTargetProcessId: 12692\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1410\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+21ee8|C:\\Windows\\System32\\appresolver.dll+1ef46|C:\\windows\\system32\\twinui.pcshell.dll+1d434|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 49,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000050",
+    "timestamp": "2020-11-02T04:13:01.084Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 13268\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-fa49-000000000700}\r\nTargetProcessId: 12692\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+310c0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+30dbf|C:\\windows\\SYSTEM32\\ntdll.dll+6ba5|C:\\windows\\SYSTEM32\\ntdll.dll+67f1|C:\\windows\\SYSTEM32\\ntdll.dll+6650|C:\\windows\\SYSTEM32\\ntdll.dll+3052c|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 50,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000051",
+    "timestamp": "2020-11-02T04:13:01.085Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 11428\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+221c5|C:\\Windows\\System32\\appresolver.dll+1edcc|C:\\Windows\\System32\\appresolver.dll+1ecb7|C:\\windows\\Explorer.EXE+5b1a7|C:\\windows\\Explorer.EXE+5b0a4|C:\\windows\\Explorer.EXE+29a50|C:\\windows\\System32\\windows.storage.dll+16e1c4|C:\\windows\\System32\\windows.storage.dll+16de05|C:\\windows\\System32\\windows.storage.dll+16dce5|C:\\windows\\System32\\shcore.dll+31636|C:\\windows\\SYSTEM32\\ntdll.dll+2f655|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 51,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000052",
+    "timestamp": "2020-11-02T04:13:01.085Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 11428\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1400\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+1c4d6|C:\\Windows\\System32\\appresolver.dll+22383|C:\\Windows\\System32\\appresolver.dll+1edcc|C:\\Windows\\System32\\appresolver.dll+1ecb7|C:\\windows\\Explorer.EXE+5b1a7|C:\\windows\\Explorer.EXE+5b0a4|C:\\windows\\Explorer.EXE+29a50|C:\\windows\\System32\\windows.storage.dll+16e1c4|C:\\windows\\System32\\windows.storage.dll+16de05|C:\\windows\\System32\\windows.storage.dll+16dce5|C:\\windows\\System32\\shcore.dll+31636|C:\\windows\\SYSTEM32\\ntdll.dll+2f655|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 52,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000053",
+    "timestamp": "2020-11-02T04:13:01.085Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\SYSTEM32\\TWINAPI.dll+6d4c|C:\\windows\\system32\\twinui.pcshell.dll+20880|C:\\windows\\system32\\twinui.pcshell.dll+20082|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 53,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000054",
+    "timestamp": "2020-11-02T04:13:01.085Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+783a3|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 54,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000055",
+    "timestamp": "2020-11-02T04:13:01.085Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 55,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000056",
+    "timestamp": "2020-11-02T04:13:01.086Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 56,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000057",
+    "timestamp": "2020-11-02T04:13:01.091Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 57,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000058",
+    "timestamp": "2020-11-02T04:13:01.091Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 10552\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\TaskFlowDataEngine.dll+cf160|C:\\Windows\\System32\\TaskFlowDataEngine.dll+9827b|C:\\Windows\\System32\\TaskFlowDataEngine.dll+978ff|C:\\Windows\\System32\\TaskFlowDataEngine.dll+973f9|C:\\Windows\\System32\\TaskFlowDataEngine.dll+96e25|C:\\Windows\\System32\\TaskFlowDataEngine.dll+94c85|C:\\Windows\\System32\\TaskFlowDataEngine.dll+93658|C:\\Windows\\System32\\TaskFlowDataEngine.dll+9dfb1|C:\\windows\\System32\\shcore.dll+c540|C:\\windows\\System32\\shcore.dll+c1c8|C:\\windows\\System32\\shcore.dll+ac61|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 58,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000059",
+    "timestamp": "2020-11-02T04:13:01.091Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.071\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 7496\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\System32\\NPSMDesktopProvider.dll+1dbfa|C:\\windows\\System32\\NPSMDesktopProvider.dll+139e2|C:\\windows\\System32\\NPSMDesktopProvider.dll+1415b|C:\\windows\\System32\\shcore.dll+c540|C:\\windows\\System32\\shcore.dll+c1c8|C:\\windows\\System32\\shcore.dll+ac61|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 59,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000060",
+    "timestamp": "2020-11-02T04:13:01.149Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.149\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\SessionInfo\\2\\ApplicationViewManagement\\W32:00000000004902B2",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 60,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000061",
+    "timestamp": "2020-11-02T04:13:01.150Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:01.149\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\SessionInfo\\2\\ApplicationViewManagement\\W32:00000000004902B2\\VirtualDesktop\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 61,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000062",
+    "timestamp": "2020-11-02T04:13:01.576Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.571\r\nProcessGuid: {39e4a257-cd82-5f9f-fa49-000000000700}\r\nProcessId: 12692\r\nImage: C:\\Windows\\System32\\conhost.exe\r\nImageLoaded: C:\\Windows\\System32\\edputil.dll\r\nFileVersion: 10.0.18362.1 (WinBuild.160101.0800)\r\nDescription: EDP util\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: EDPUTIL.DLL\r\nHashes: SHA1=13D34F2596A43A2467CFC901CEEBE8457B7F195F,MD5=85B87A7B4F529EC541818C241B8C0F43,SHA256=2505CBAB7459C0ECD8EDDCD3E2C09827B08D718BAF197AB24BB4E69B3948A27F,IMPHASH=3173150472840D83979F027AE2D1081C\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 62,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000063",
+    "timestamp": "2020-11-02T04:13:01.711Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.695\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\httpapi.dll\r\nFileVersion: 10.0.18362.1 (WinBuild.160101.0800)\r\nDescription: HTTP Protocol Stack API\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: httpapi.dll\r\nHashes: SHA1=C608B077806D8B905C50FC023B8A4666CC35A1B3,MD5=38AFA52FD7161B95F3927CC6B95896B6,SHA256=5B47DBE7FFF515409EC916AEB152503798CE453871BE34823870BD50C38643F0,IMPHASH=CC2E69927A5241B7E666C7698B40F6AE\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 63,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000064",
+    "timestamp": "2020-11-02T04:13:01.798Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\mswsock.dll\r\nFileVersion: 10.0.18362.815 (WinBuild.160101.0800)\r\nDescription: Microsoft Windows Sockets 2.0 Service Provider\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: mswsock.dll\r\nHashes: SHA1=2E03CA141D735D13491049B4D6C2DC2B928B4C01,MD5=8578F1F72C6550CF62965D520FA7C6E9,SHA256=20008AAB6285FB2B24DE1E72D11654316FF601918FD05B7DF2F9894C64A16956,IMPHASH=E5E26C86BC73F56D7EDD17D98802AA21\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 64,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000065",
+    "timestamp": "2020-11-02T04:13:01.801Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\dnsapi.dll\r\nFileVersion: 10.0.18362.1082 (WinBuild.160101.0800)\r\nDescription: DNS Client API DLL\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: dnsapi\r\nHashes: SHA1=F1909EDE6F17B5B31AFA580DFE3C28485CAA2037,MD5=F1286919D541FF93F1174B0B1F1CF7FD,SHA256=3453BD57B23A211FD45A1BBA0EF84FD3B61E174112D16974B9481A0818C372E5,IMPHASH=D8803D749EB329542778B6CC38924BBA\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 65,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000066",
+    "timestamp": "2020-11-02T04:13:01.802Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\nsi.dll\r\nFileVersion: 10.0.18362.449 (WinBuild.160101.0800)\r\nDescription: NSI User-mode interface DLL\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: nsi.dll\r\nHashes: SHA1=4118D7E1C3531A1A01FB8924E1A1D470066EEA3F,MD5=9EB93B389D055FA045FC91D2B763B3AC,SHA256=AB620EE31FB65F1A51B2FA28F30BC31329966CB27E3570812138DF99E4D7CC8D,IMPHASH=DEFB8C5BB37FCD63DC790B55724FDE42\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 66,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000067",
+    "timestamp": "2020-11-02T04:13:01.802Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\IPHLPAPI.DLL\r\nFileVersion: 10.0.18362.1 (WinBuild.160101.0800)\r\nDescription: IP Helper API\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: iphlpapi.dll\r\nHashes: SHA1=9414EC114C3389E0A7BC2FD986E00946E1A2A299,MD5=3929147A2A34B0902152C7D0F241B02A,SHA256=AD1C5309AA873F6A284EABE382812868E20C3D3D64197F3E6EF9D015EA060CAA,IMPHASH=6EC28633CC4ECB9F457795DD7E00B34B\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 67,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000068",
+    "timestamp": "2020-11-02T04:13:01.802Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 68,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000069",
+    "timestamp": "2020-11-02T04:13:01.802Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 69,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000070",
+    "timestamp": "2020-11-02T04:13:01.803Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 70,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000071",
+    "timestamp": "2020-11-02T04:13:01.803Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 71,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000072",
+    "timestamp": "2020-11-02T04:13:01.803Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\rasadhlp.dll\r\nFileVersion: 10.0.18362.1 (WinBuild.160101.0800)\r\nDescription: Remote Access AutoDial Helper\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: rasadhlp.dll\r\nHashes: SHA1=1BC9FA692CFFE0F829EF0093FC1EC1A7CDE0FEDF,MD5=285EB69E85F9C587B55DDD5816B827A4,SHA256=B009AF1CFFE8441149B1903B7841DA14B15BEE931F6709C20655668F2019F9D8,IMPHASH=FEAF8EF2A61D5237FD324D1624A3894B\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 72,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000073",
+    "timestamp": "2020-11-02T04:13:01.803Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 73,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000074",
+    "timestamp": "2020-11-02T04:13:01.803Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 74,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000075",
+    "timestamp": "2020-11-02T04:13:01.804Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 75,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000076",
+    "timestamp": "2020-11-02T04:13:01.804Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 12,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry object added or deleted:\r\nRuleName: -\r\nEventType: CreateKey\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetObject: HKLM\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 76,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000077",
+    "timestamp": "2020-11-02T04:13:01.805Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 7,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Image loaded:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.790\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nImageLoaded: C:\\Windows\\System32\\FWPUCLNT.DLL\r\nFileVersion: 10.0.18362.1110 (WinBuild.160101.0800)\r\nDescription: FWP/IPsec User-Mode API\r\nProduct: Microsoft\u00ae Windows\u00ae Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: fwpuclnt.dll\r\nHashes: SHA1=A28C972B02687B3B4AC7B03A0B275580039D130B,MD5=B09AEAF6E34557F371609E8C5349CEED,SHA256=EF6A74EBB63FE5B8108BE3B296C86C0C3AE14E240110B78D27E7D3EA491B1F9D,IMPHASH=AFD4C9F86C7354898594DD6BBF32C51F\r\nSigned: true\r\nSignature: Microsoft Windows\r\nSignatureStatus: Valid",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 77,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000078",
+    "timestamp": "2020-11-02T04:13:01.995Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.992\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 78,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000079",
+    "timestamp": "2020-11-02T04:13:01.995Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:01.992\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 79,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000080",
+    "timestamp": "2020-11-02T04:13:02.994Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:02.992\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 80,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000081",
+    "timestamp": "2020-11-02T04:13:02.994Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:02.992\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 81,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000082",
+    "timestamp": "2020-11-02T04:13:03.806Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 22,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Dns query:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:12:57.391\r\nProcessGuid: {39e4a257-cd82-5f9f-f949-000000000700}\r\nProcessId: 10668\r\nQueryName: WORKSTATION5\r\nQueryStatus: 0\r\nQueryResults: fe80::90e:17af:263c:5209;::ffff:192.168.2.5;\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 82,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000083",
+    "timestamp": "2020-11-02T04:13:03.995Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:03.993\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 83,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000084",
+    "timestamp": "2020-11-02T04:13:03.995Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:03.993\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 84,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000085",
+    "timestamp": "2020-11-02T04:13:04.071Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:04.071\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\JvaqbjfCbjreFuryy\\i1.0\\cbjrefuryy.rkr\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 85,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000086",
+    "timestamp": "2020-11-02T04:13:04.072Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:04.071\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\HRZR_PGYFRFFVBA\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 86,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000087",
+    "timestamp": "2020-11-02T04:13:04.995Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:04.993\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 87,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000088",
+    "timestamp": "2020-11-02T04:13:04.996Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:04.993\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 1060\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-cd84-5f9f-fb49-000000000700}\r\nTargetProcessId: 14064\r\nTargetImage: C:\\windows\\system32\\backgroundTaskHost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+222a3|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37ea0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+37929|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+686f8|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6e84a|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f700|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+34be4|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+6f63e|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+713b5|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+50bda|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+4500a|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 88,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000089",
+    "timestamp": "2020-11-02T04:13:05.543Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2e36-000000000700}\r\nTargetProcessId: 12832\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1410\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.pcshell.dll+1d207|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 89,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000090",
+    "timestamp": "2020-11-02T04:13:05.543Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2e36-000000000700}\r\nTargetProcessId: 12832\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+221c5|C:\\Windows\\System32\\appresolver.dll+1edcc|C:\\windows\\system32\\twinui.pcshell.dll+1d434|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 90,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000091",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2e36-000000000700}\r\nTargetProcessId: 12832\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+1ee93|C:\\windows\\system32\\twinui.pcshell.dll+1d434|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 91,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000092",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 1388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2e36-000000000700}\r\nTargetProcessId: 12832\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x1410\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+21ee8|C:\\Windows\\System32\\appresolver.dll+1ef46|C:\\windows\\system32\\twinui.pcshell.dll+1d434|C:\\windows\\system32\\twinui.pcshell.dll+fadd0|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 92,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000093",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f132-5f8b-1000-000000000700}\r\nSourceProcessId: 944\r\nSourceThreadId: 13268\r\nSourceImage: C:\\windows\\system32\\svchost.exe\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2e36-000000000700}\r\nTargetProcessId: 12832\r\nTargetImage: C:\\windows\\system32\\conhost.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+310c0|C:\\windows\\SYSTEM32\\psmserviceexthost.dll+30dbf|C:\\windows\\SYSTEM32\\ntdll.dll+6ba5|C:\\windows\\SYSTEM32\\ntdll.dll+67f1|C:\\windows\\SYSTEM32\\ntdll.dll+6650|C:\\windows\\SYSTEM32\\ntdll.dll+3052c|C:\\windows\\SYSTEM32\\ntdll.dll+34142|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 93,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000094",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 11428\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+221c5|C:\\Windows\\System32\\appresolver.dll+1edcc|C:\\Windows\\System32\\appresolver.dll+1ecb7|C:\\windows\\Explorer.EXE+5b1a7|C:\\windows\\Explorer.EXE+5b0a4|C:\\windows\\Explorer.EXE+29a50|C:\\windows\\System32\\windows.storage.dll+16e1c4|C:\\windows\\System32\\windows.storage.dll+16de05|C:\\windows\\System32\\windows.storage.dll+16dce5|C:\\windows\\System32\\shcore.dll+31636|C:\\windows\\SYSTEM32\\ntdll.dll+2f655|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 94,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000095",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 11428\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1400\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\appresolver.dll+1c4d6|C:\\Windows\\System32\\appresolver.dll+22383|C:\\Windows\\System32\\appresolver.dll+1edcc|C:\\Windows\\System32\\appresolver.dll+1ecb7|C:\\windows\\Explorer.EXE+5b1a7|C:\\windows\\Explorer.EXE+5b0a4|C:\\windows\\Explorer.EXE+29a50|C:\\windows\\System32\\windows.storage.dll+16e1c4|C:\\windows\\System32\\windows.storage.dll+16de05|C:\\windows\\System32\\windows.storage.dll+16dce5|C:\\windows\\System32\\shcore.dll+31636|C:\\windows\\SYSTEM32\\ntdll.dll+2f655|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 95,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000096",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:05.524\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\{1NP14R77-02R7-4R5Q-O744-2RO1NR5198O7}\\JvaqbjfCbjreFuryy\\i1.0\\cbjrefuryy.rkr\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 96,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000097",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:05.524\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\\Count\\HRZR_PGYFRFFVBA\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 97,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000098",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\SYSTEM32\\TWINAPI.dll+6d4c|C:\\windows\\system32\\twinui.pcshell.dll+20880|C:\\windows\\system32\\twinui.pcshell.dll+20082|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 98,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000099",
+    "timestamp": "2020-11-02T04:13:05.544Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.524\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+783a3|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 99,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000100",
+    "timestamp": "2020-11-02T04:13:05.545Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.540\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 100,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000101",
+    "timestamp": "2020-11-02T04:13:05.545Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.540\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 101,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000102",
+    "timestamp": "2020-11-02T04:13:05.545Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.540\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 4688\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\system32\\twinui.dll+785b2|C:\\windows\\system32\\twinui.dll+1780b|C:\\windows\\system32\\twinui.dll+1734c|C:\\windows\\system32\\twinui.dll+68f7a|C:\\windows\\system32\\twinui.dll+16e09|C:\\windows\\system32\\twinui.dll+16f4b|C:\\windows\\system32\\twinui.dll+16ecd|C:\\windows\\System32\\USER32.dll+15c1d|C:\\windows\\System32\\USER32.dll+15612|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+45f0|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+41b9|C:\\Windows\\System32\\windows.immersiveshell.serviceprovider.dll+3e4f|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 102,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000103",
+    "timestamp": "2020-11-02T04:13:05.545Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.540\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 7496\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\System32\\NPSMDesktopProvider.dll+1dbfa|C:\\windows\\System32\\NPSMDesktopProvider.dll+139e2|C:\\windows\\System32\\NPSMDesktopProvider.dll+1415b|C:\\windows\\System32\\shcore.dll+c540|C:\\windows\\System32\\shcore.dll+c1c8|C:\\windows\\System32\\shcore.dll+ac61|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 103,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000104",
+    "timestamp": "2020-11-02T04:13:05.552Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.540\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 2480\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x1000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\Windows\\System32\\TaskFlowDataEngine.dll+cf160|C:\\Windows\\System32\\TaskFlowDataEngine.dll+9827b|C:\\Windows\\System32\\TaskFlowDataEngine.dll+978ff|C:\\Windows\\System32\\TaskFlowDataEngine.dll+973f9|C:\\Windows\\System32\\TaskFlowDataEngine.dll+96e25|C:\\Windows\\System32\\TaskFlowDataEngine.dll+94c85|C:\\Windows\\System32\\TaskFlowDataEngine.dll+93658|C:\\Windows\\System32\\TaskFlowDataEngine.dll+9dfb1|C:\\windows\\System32\\shcore.dll+c540|C:\\windows\\System32\\shcore.dll+c1c8|C:\\windows\\System32\\shcore.dll+ac61|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 104,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000105",
+    "timestamp": "2020-11-02T04:13:05.557Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:05.555\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\ActivityDataModel\\ReaderRevisionInfo\\A972977C-95EC-9F21-DCC4-595CA3A0E033\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 105,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000106",
+    "timestamp": "2020-11-02T04:13:05.559Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 13,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Registry value set:\r\nRuleName: -\r\nEventType: SetValue\r\nUtcTime: 2020-11-02 09:13:05.555\r\nProcessGuid: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nProcessId: 1072\r\nImage: C:\\windows\\Explorer.EXE\r\nTargetObject: HKU\\S-1-5-21-3940915590-64593676-1414006259-500\\Software\\Microsoft\\Windows\\CurrentVersion\\ActivityDataModel\\ReaderRevisionInfo\\A972977C-95EC-9F21-DCC4-595CA3A0E033\r\nDetails: Binary Data",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 106,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000107",
+    "timestamp": "2020-11-02T04:13:05.650Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_command_execution",
+    "severity": "medium",
+    "confidence": 0.72,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.649\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 5388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-f247-5f8b-d300-000000000700}\r\nTargetProcessId: 4368\r\nTargetImage: C:\\Windows\\SystemApps\\InputApp_cw5n1h2txyewy\\WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\SYSTEM32\\ntdll.dll+30729|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 107,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000108",
+    "timestamp": "2020-11-02T04:13:05.650Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.649\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 5388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-41a0-5f9a-2d36-000000000700}\r\nTargetProcessId: 13264\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\SYSTEM32\\ntdll.dll+30729|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 108,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  },
+  {
+    "event_id": "END-000109",
+    "timestamp": "2020-11-02T04:13:05.650Z",
+    "sector": "endpoint",
+    "source_dataset": "mordor_endpoint_powershell_httplistener",
+    "asset": "WORKSTATION5",
+    "event_type": "endpoint_powershell_activity",
+    "severity": "medium",
+    "confidence": 0.78,
+    "label": "endpoint_event",
+    "endpoint": {
+      "hostname": "WORKSTATION5",
+      "event_id": 10,
+      "source_name": "Microsoft-Windows-Sysmon",
+      "channel": "Microsoft-Windows-Sysmon/Operational",
+      "level": "4",
+      "message": "Process accessed:\r\nRuleName: -\r\nUtcTime: 2020-11-02 09:13:05.649\r\nSourceProcessGUID: {39e4a257-f1b3-5f8b-a700-000000000700}\r\nSourceProcessId: 1072\r\nSourceThreadId: 5388\r\nSourceImage: C:\\windows\\Explorer.EXE\r\nTargetProcessGUID: {39e4a257-cd82-5f9f-f949-000000000700}\r\nTargetProcessId: 10668\r\nTargetImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nGrantedAccess: 0x2000\r\nCallTrace: C:\\windows\\SYSTEM32\\ntdll.dll+9c584|C:\\windows\\System32\\KERNELBASE.dll+305fe|C:\\windows\\system32\\twinui.dll+72a89|C:\\windows\\SYSTEM32\\ntdll.dll+30729|C:\\windows\\SYSTEM32\\ntdll.dll+345b4|C:\\windows\\System32\\KERNEL32.DLL+17c24|C:\\windows\\SYSTEM32\\ntdll.dll+6cea1",
+      "signals": [
+        "powershell_activity",
+        "process_or_command_activity"
+      ]
+    },
+    "evidence_ref": {
+      "source_file": "psh_powershell_httplistener_2020-11-0204130683.json",
+      "row_id": 109,
+      "columns": [
+        "Message",
+        "EventID",
+        "SourceName",
+        "Hostname",
+        "@timestamp",
+        "Channel"
+      ]
+    }
+  }
+]
