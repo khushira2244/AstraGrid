@@ -10,9 +10,23 @@ Live demo: [https://astragrid.netlify.app/](https://astragrid.netlify.app/)
 Repository: [https://github.com/khushira2244/AstraGrid](https://github.com/khushira2244/AstraGrid)
 
 
-## Elevator Pitch
+## Important points after hackathon I kept changes on other branch.
+These changes belongs to which I want to upgrad my product.
+Upgrade Roadmap
 
-AstraGrid turns SANS SIFT into a cyber-physical AI responder that validates power, water, network, and endpoint evidence, self-corrects wrong hypotheses, and produces audit-ready reports.
+Day 1 — WADI Integration
+Large-scale water distribution scenario expansion.
+
+Day 2–3 — MCP Integration
+AstraGrid tools become Protocol SIFT / MCP-ready and visible in the frontend.
+
+Day 4 — Multi-Case Support
+Run multiple cyber-physical cases from one system.
+
+Day 5 — MITRE ATT&CK ICS Mapping
+Map OT/network/endpoint evidence to ATT&CK for ICS technique context.
+
+
 
 ---
 
