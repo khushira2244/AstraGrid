@@ -24,6 +24,10 @@ from mcp_server.accuracy_report import (
     build_accuracy_report_json,
     build_accuracy_report_markdown,
 )
+from mcp_server.response_planner import (
+    build_response_plan,
+    build_response_plan_markdown,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +41,8 @@ FINAL_REPORT_JSON_PATH = OUTPUTS_DIR / "final_report.json"
 FINAL_REPORT_MD_PATH = OUTPUTS_DIR / "final_report.md"
 ACCURACY_REPORT_JSON_PATH = OUTPUTS_DIR / "accuracy_report.json"
 ACCURACY_REPORT_MD_PATH = OUTPUTS_DIR / "accuracy_report.md"
+RESPONSE_PLAN_JSON_PATH = OUTPUTS_DIR / "response_plan.json"
+RESPONSE_PLAN_MD_PATH = OUTPUTS_DIR / "response_plan.md"
 
 
 def utc_now_iso() -> str:
@@ -212,6 +218,14 @@ def run_case(case_dir: str = "data/sample_case_power_water_cascade") -> Dict[str
         tool_results=tool_results,
     )
 
+    response_plan = build_response_plan(
+        findings=findings,
+        claims=claims,
+        tool_results=tool_results,
+    )
+
+    response_plan_md = build_response_plan_markdown(response_plan)
+
     investigation_summary = {
         "case_id": manifest.get("case_id"),
         "case_name": manifest.get("case_name"),
@@ -227,6 +241,7 @@ def run_case(case_dir: str = "data/sample_case_power_water_cascade") -> Dict[str
         "timeline": timeline,
         "claims": claims,
         "self_correction_trace": self_correction_trace,
+        "response_plan": response_plan,
         "notes": [
             "This is a deterministic local case run.",
             "Each finding is linked to the tool run that produced it.",
@@ -256,6 +271,8 @@ def run_case(case_dir: str = "data/sample_case_power_water_cascade") -> Dict[str
     save_text(FINAL_REPORT_MD_PATH, final_report_md)
     save_json(ACCURACY_REPORT_JSON_PATH, accuracy_report)
     save_text(ACCURACY_REPORT_MD_PATH, accuracy_report_md)
+    save_json(RESPONSE_PLAN_JSON_PATH, response_plan)
+    save_text(RESPONSE_PLAN_MD_PATH, response_plan_md)
 
     return investigation_summary
 
@@ -272,6 +289,8 @@ def main():
     print(f"[OK] Final report Markdown saved to: {FINAL_REPORT_MD_PATH}")
     print(f"[OK] Accuracy report JSON saved to: {ACCURACY_REPORT_JSON_PATH}")
     print(f"[OK] Accuracy report Markdown saved to: {ACCURACY_REPORT_MD_PATH}")
+    print(f"✅ Response plan JSON saved to: {RESPONSE_PLAN_JSON_PATH}")
+    print(f"✅ Response plan Markdown saved to: {RESPONSE_PLAN_MD_PATH}")
 
     print(f"Case: {result['case_id']} - {result['case_name']}")
     print(f"Classification hint: {result['classification_hint']}")
@@ -279,6 +298,7 @@ def main():
     print(f"Timeline events: {len(result['timeline'])}")
     print(f"Claims: {len(result['claims'])}")
     print(f"Self-correction steps: {len(result['self_correction_trace']['steps'])}")
+    print(f"Response actions: {len(result['response_plan']['recommended_actions'])}")
 
     accuracy = result["accuracy_report"]["summary"]["accuracy"]
     print(f"Accuracy: {accuracy}")

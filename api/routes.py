@@ -129,6 +129,22 @@ def case_self_correction():
     }
 
 
+@router.get("/case/response-plan")
+def case_response_plan():
+    data = output_json("response_plan.json")
+
+    return {
+        "status": "success",
+        "data": data,
+        "summary": {
+            "response_plan_id": data.get("response_plan_id") if isinstance(data, dict) else None,
+            "response_mode": data.get("response_mode") if isinstance(data, dict) else None,
+            "recommended_actions": len(data.get("recommended_actions", [])) if isinstance(data, dict) else 0,
+            "human_approval_required": len(data.get("human_approval_required", [])) if isinstance(data, dict) else 0,
+        },
+    }
+
+
 @router.get("/case/tool-runs")
 def case_tool_runs():
     data = output_json("tool_runs.json")
