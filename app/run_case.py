@@ -28,6 +28,7 @@ from mcp_server.response_planner import (
     build_response_plan,
     build_response_plan_markdown,
 )
+from mcp_server.context_integrity import build_context_integrity_report
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,6 +44,8 @@ ACCURACY_REPORT_JSON_PATH = OUTPUTS_DIR / "accuracy_report.json"
 ACCURACY_REPORT_MD_PATH = OUTPUTS_DIR / "accuracy_report.md"
 RESPONSE_PLAN_JSON_PATH = OUTPUTS_DIR / "response_plan.json"
 RESPONSE_PLAN_MD_PATH = OUTPUTS_DIR / "response_plan.md"
+CONTEXT_INTEGRITY_JSON_PATH = OUTPUTS_DIR / "context_integrity_report.json"
+CONTEXT_INTEGRITY_MD_PATH = OUTPUTS_DIR / "context_integrity_report.md"
 
 
 def utc_now_iso() -> str:
@@ -223,8 +226,12 @@ def run_case(case_dir: str = "data/sample_case_power_water_cascade") -> Dict[str
         claims=claims,
         tool_results=tool_results,
     )
-
     response_plan_md = build_response_plan_markdown(response_plan)
+
+    context_integrity_report = build_context_integrity_report(
+        case_dir=case_dir,
+        save=True,
+    )
 
     investigation_summary = {
         "case_id": manifest.get("case_id"),
@@ -242,10 +249,12 @@ def run_case(case_dir: str = "data/sample_case_power_water_cascade") -> Dict[str
         "claims": claims,
         "self_correction_trace": self_correction_trace,
         "response_plan": response_plan,
+        "context_integrity_report": context_integrity_report,
         "notes": [
             "This is a deterministic local case run.",
             "Each finding is linked to the tool run that produced it.",
             "This is not yet the final autonomous Protocol SIFT run.",
+            "Context integrity prevents cyber-physical claims from being promoted without validated infrastructure context.",
         ],
     }
 
@@ -274,6 +283,11 @@ def run_case(case_dir: str = "data/sample_case_power_water_cascade") -> Dict[str
     save_json(RESPONSE_PLAN_JSON_PATH, response_plan)
     save_text(RESPONSE_PLAN_MD_PATH, response_plan_md)
 
+    # context_integrity_report is already saved by build_context_integrity_report(save=True)
+    # as:
+    # - outputs/context_integrity_report.json
+    # - outputs/context_integrity_report.md
+
     return investigation_summary
 
 
@@ -291,6 +305,8 @@ def main():
     print(f"[OK] Accuracy report Markdown saved to: {ACCURACY_REPORT_MD_PATH}")
     print(f"✅ Response plan JSON saved to: {RESPONSE_PLAN_JSON_PATH}")
     print(f"✅ Response plan Markdown saved to: {RESPONSE_PLAN_MD_PATH}")
+    print(f"✅ Context integrity JSON saved to: {CONTEXT_INTEGRITY_JSON_PATH}")
+    print(f"✅ Context integrity Markdown saved to: {CONTEXT_INTEGRITY_MD_PATH}")
 
     print(f"Case: {result['case_id']} - {result['case_name']}")
     print(f"Classification hint: {result['classification_hint']}")
@@ -299,6 +315,11 @@ def main():
     print(f"Claims: {len(result['claims'])}")
     print(f"Self-correction steps: {len(result['self_correction_trace']['steps'])}")
     print(f"Response actions: {len(result['response_plan']['recommended_actions'])}")
+
+    context_status = result["context_integrity_report"]["summary"][
+        "overall_context_status"
+    ]
+    print(f"Context integrity: {context_status}")
 
     accuracy = result["accuracy_report"]["summary"]["accuracy"]
     print(f"Accuracy: {accuracy}")

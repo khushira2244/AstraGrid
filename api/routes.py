@@ -1,6 +1,8 @@
 from fastapi import APIRouter
 import subprocess
 import sys
+import json
+from pathlib import Path
 
 from api.utils import (
     build_case_summary,
@@ -10,6 +12,9 @@ from api.utils import (
 
 
 router = APIRouter()
+
+ROOT = Path(__file__).resolve().parents[1]
+WADI_CONFIG_PATH = ROOT / "configs" / "column_maps" / "wadi_optional.json"
 
 
 @router.get("/health")
@@ -83,7 +88,6 @@ def case_findings():
         "status": "success",
         "data": data,
     }
-    
 
 
 @router.get("/case/timeline")
@@ -174,11 +178,12 @@ def accuracy_report():
         "markdown": output_markdown("accuracy_report.md"),
     }
 
+
 @router.get("/case/threat-origin")
 def case_threat_origin():
     findings = output_json("findings.json")
-    dependency = findings.get("tool_results", {}).get("dependency", {})
-    network = findings.get("tool_results", {}).get("network", {})
+    dependency = findings.get("tool_results", {}).get("dependency", {}) if isinstance(findings, dict) else {}
+    network = findings.get("tool_results", {}).get("network", {}) if isinstance(findings, dict) else {}
 
     network_evidence_refs = network.get("evidence_refs", [])
 
@@ -218,3 +223,57 @@ def case_threat_origin():
             ),
         },
     }
+
+
+@router.get("/case/context-integrity")
+def get_case_context_integrity():
+    data = output_json("context_integrity_report.json")
+
+    return {
+        "status": "success",
+        "data": data,
+        "summary": data.get("summary") if isinstance(data, dict) else None,
+        "claim_boundaries": data.get("claim_boundaries") if isinstance(data, dict) else None,
+    }
+
+
+@router.get("/case/reports/context-integrity")
+def get_case_context_integrity_report():
+    return {
+        "status": "success",
+        "markdown": output_markdown("context_integrity_report.md"),
+    }
+
+
+@router.get("/case/wadi/config")
+def get_wadi_config():
+    if not WADI_CONFIG_PATH.exists():
+        return {
+            "status": "error",
+            "message": "WADI config not found",
+            "path": str(WADI_CONFIG_PATH),
+        }
+
+    data = json.loads(WADI_CONFIG_PATH.read_text(encoding="utf-8"))
+
+    return {
+        "status": "success",
+        "data": data,
+        "inspection_result": data.get("inspection_result"),
+        "agent_outputs": data.get("agent_outputs"),
+        "normalized_event_mapping": data.get("normalized_event_mapping"),
+    }
+
+@router.get("/en-US/case/context-integrity")
+def get_case_context_integrity_en_us():
+    return get_case_context_integrity()
+
+
+@router.get("/en-US/case/reports/context-integrity")
+def get_case_context_integrity_report_en_us():
+    return get_case_context_integrity_report()
+
+
+@router.get("/en-US/case/wadi/config")
+def get_wadi_config_en_us():
+    return get_wadi_config()
