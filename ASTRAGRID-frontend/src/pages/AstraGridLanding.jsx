@@ -20,7 +20,7 @@ const CHAIN_NODES = [
   { icon: '💧', name: 'Water Pump Station', sub: 'Anomaly — first visible symptom', verdict: 'WRONG CONCLUSION', vCls: 'vWrong', active: true, broken: true },
 ];
 
-const EV_LAYERS = ['Power-grid telemetry', 'Water treatment & distribution', 'Modbus / network evidence', 'Endpoint forensic evidence', 'Infrastructure dependency graph'];
+const EV_LAYERS = ['Power-grid telemetry', 'Water treatment & distribution', 'Modbus / network evidence', 'Endpoint forensic evidence', 'Infrastructure dependency graph', 'WADI optional water context'];
 
 const VERDICT_PILLS = [
   { name: 'CONFIRMED', badge: 'CONFIRMED', bCls: 'vbC' },
@@ -30,12 +30,12 @@ const VERDICT_PILLS = [
   { name: 'CONTRADICTED', badge: 'CONTRADICTED', bCls: 'vbX' },
 ];
 
-const TRACE_ITEMS = ['Self-correction trace recorded', 'Tool run IDs per step', 'Evidence references attached', 'Final report generated', 'Accuracy report generated', 'Execution logs exported'];
+const TRACE_ITEMS = ['Self-correction trace recorded', 'Tool run IDs per step', 'Evidence references attached', 'Context integrity report generated', 'Final report generated', 'Accuracy report generated', 'Execution logs exported'];
 
 const CHAIN_NODES_SCREEN = [
   { name: 'AstraGrid', sub: 'Structured Tools', highlight: true },
   { name: 'Power', sub: 'Grid telemetry', highlight: false },
-  { name: 'Water', sub: 'Utility', highlight: false },
+  { name: 'Water', sub: 'SWaT / BATADAL / WADI', highlight: false },
   { name: 'Network', sub: 'Modbus / OT', highlight: false },
   { name: 'Endpoint', sub: 'Forensics', highlight: false },
   { name: 'Dependency', sub: 'Infra graph', highlight: false },
@@ -48,6 +48,9 @@ const SCREEN_OUTPUTS = [
   { name: 'Claim Verdicts', sub: 'CONFIRMED / UNSUPPORTED', green: false },
   { name: 'Self-Correction', sub: 'Hypothesis trace', green: false },
   { name: 'Timeline', sub: 'Investigation steps', green: false },
+  { name: 'Context Integrity', sub: 'WADI + claim boundary', green: true },
+  { name: 'WADI Adapter', sub: 'Accepted water context', green: false },
+  { name: 'Response Plan', sub: 'Human-gated actions', green: false },
 ];
 
 const SCREEN_FE = [
@@ -57,15 +60,13 @@ const SCREEN_FE = [
 ];
 
 const LEFT_NODES = [{ dot: 'red', label: 'SANS SIFT' }, { dot: 'red', label: 'Protocol SIFT' }, { dot: 'amber', label: 'Claude Code' }, { dot: 'red', label: 'Case Files' }];
-const RIGHT_NODES = [{ dot: 'green', label: 'Final Report' }, { dot: 'green', label: 'Accuracy 1.0' }, { dot: 'amber', label: 'Self-Corrected' }, { dot: 'green', label: 'Audit Trail' }];
+const RIGHT_NODES = [{ dot: 'green', label: 'Final Report' }, { dot: 'green', label: 'Accuracy 1.0' }, { dot: 'amber', label: 'Self-Corrected' }, { dot: 'green', label: 'Context Strong' }, { dot: 'green', label: 'Audit Trail' }];
 
 const BRANCHES = [
-  { icon: '🔌', title: 'Full MCP Registration', body: 'Full server registration with Protocol SIFT for native agent tool discovery.', tag: 'MCP' },
-  { icon: '📡', title: 'Live SCADA Ingestion', body: 'Real-time ICS and SCADA telemetry feeds replacing static case files.', tag: 'LIVE DATA' },
-  { icon: '🏗', title: 'Expanded Layers', body: 'Telecom, transport, energy grid, and healthcare infrastructure evidence layers.', tag: 'INFRA+' },
-  { icon: '🔗', title: 'Multi-Case Correlation', body: 'Cross-incident reasoning across cascading events spanning multiple facilities.', tag: 'CORRELATION' },
-  { icon: '⚡', title: 'Real-Time Alert Ingestion', body: 'SIEM, EDR, and OT monitoring tool feeds for live incident triggering.', tag: 'SIEM · EDR' },
-  { icon: '🧭', title: 'MITRE ATT&CK ICS', body: 'Deeper ICS tactic and technique mapping per claim with human approval workflow.', tag: "ATT&CK" },
+  { icon: '🧩', title: 'WADI + Context Integrity', body: 'Validate sensor, actuator, timestamp, dependency, and command-path context before promoting direct attack or cascade claims.', tag: 'CONTEXT' },
+  { icon: '🔌', title: 'MCP-Native Tool Boundary', body: 'Expose AstraGrid evidence tools as Protocol SIFT-discoverable MCP tools with read-only access, tool-run IDs, and claim-safe outputs.', tag: 'MCP' },
+  { icon: '🔗', title: 'Multi-Case Cascade Reasoning', body: 'Compare power, water, network, endpoint, and dependency patterns across multiple incidents to detect repeated cascade behavior.', tag: 'MULTI-CASE' },
+  { icon: '🛡️', title: 'Safe Autonomous Response', body: 'Generate response plans with evidence preservation, operations triage, monitoring actions, and human approval gates for high-risk changes.', tag: 'RESPONSE' },
 ];
 
 const dotCls = (d) => d === 'red' ? styles.snDotRed : d === 'green' ? styles.snDotGreen : styles.snDotAmber;
@@ -89,7 +90,7 @@ export default function AstraGridLanding() {
             <h2 className={styles.cardTitle}>Power<br /><em>Grid</em></h2>
             <p className={styles.cardDesc}>Substations and SCADA networks are primary attack targets. A compromised power node cascades silently into water, communications, and healthcare.</p>
             <div className={styles.cardBtns}>
-              <a href="#" className={`${styles.btn} ${styles.btnGhost}`}>Learn More</a>
+              <Link to="/learnmore" className={`${styles.btn} ${styles.btnGhost}`}>Learn More</Link>
               <Link to="/demo" className={`${styles.btn} ${styles.btnSolid}`}>
                 See Investigation
               </Link>
@@ -105,7 +106,7 @@ export default function AstraGridLanding() {
             <h2 className={styles.cardTitle}>Water<br /><em>Utility</em></h2>
             <p className={styles.cardDesc}>Treatment plants and pump stations receive attack cascades from upstream power events — often misclassified as direct water cyberattacks.</p>
             <div className={styles.cardBtns}>
-              <a href="#" className={`${styles.btn} ${styles.btnGhost}`}>Learn More</a>
+              <Link to="/learnmore" className={`${styles.btn} ${styles.btnGhost}`}>Learn More</Link>
               <Link to="/demo" className={`${styles.btn} ${styles.btnSolid}`}>
                 See Investigation
               </Link>
@@ -203,7 +204,7 @@ export default function AstraGridLanding() {
           <div className={styles.shHeading}>
             <div className={`${styles.eyebrow} ${styles.eyebrowCenter}`}>The Solution</div>
             <h2>What <em>AstraGrid</em> Does</h2>
-            <p>A Protocol SIFT extension that checks five evidence layers in sequence, assigns evidence-backed verdicts to every claim, and self-corrects when the first hypothesis fails.</p>
+            <p>A Protocol SIFT extension that checks cyber-physical evidence, validates infrastructure context, assigns evidence-backed claim verdicts, and self-corrects when the first hypothesis fails.</p>
           </div>
           <div className={styles.solCards}>
             {/* Card 1 */}
@@ -219,9 +220,20 @@ export default function AstraGridLanding() {
             </div>
             {/* Card 2 */}
             <div className={styles.solCard}>
+              <div className={styles.scIcon}>🧭</div>
+              <div className={styles.scTitle}>Context Integrity</div>
+              <p className={styles.scBody}>AstraGrid does not promote a cyber-physical claim just because telemetry exists. It checks sensor, actuator, timestamp, dependency, and command-path context first.</p>
+              <div className={styles.traceItems}>
+                <div className={styles.traceItem}>Context integrity: STRONG</div>
+                <div className={styles.traceItem}>WADI adapter: accepted</div>
+                <div className={styles.traceItem}>Direct command path: UNSUPPORTED</div>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div className={styles.solCard}>
               <div className={styles.scIcon}>⚖️</div>
               <div className={styles.scTitle}>Evidence-Backed Verdicts</div>
-              <p className={styles.scBody}>Every claim gets an explicit status tied to tool outputs — nothing is assumed, everything is traceable.</p>
+              <p className={styles.scBody}>Every claim gets an explicit status tied to tool outputs — nothing is assumed, everything is traceable. Claims are tied to tool outputs, context checks, and evidence references.</p>
               <div className={styles.verdictPills}>
                 {VERDICT_PILLS.map(p => (
                   <div key={p.name} className={styles.vp}>
@@ -231,7 +243,7 @@ export default function AstraGridLanding() {
                 ))}
               </div>
             </div>
-            {/* Card 3 */}
+            {/* Card 4 */}
             <div className={styles.solCard}>
               <div className={styles.scIcon}>↻</div>
               <div className={styles.scTitle}>Self-Correction &amp; Traceability</div>
@@ -250,7 +262,7 @@ export default function AstraGridLanding() {
           <div className={styles.ahHeading}>
             <div className={`${styles.eyebrow} ${styles.eyebrowCenter}`}>System Architecture</div>
             <h2>How <em>AstraGrid</em> Connects</h2>
-            <p>The frontend does not replace Protocol SIFT. It visualizes the outputs produced by the SIFT/agent investigation run.</p>
+            <p>The frontend does not replace Protocol SIFT. It visualizes generated outputs: reports, claims, timelines, response plans, tool logs, and context integrity checks.</p>
           </div>
         </div>
         <div className={styles.monitorStage}>
@@ -319,7 +331,7 @@ export default function AstraGridLanding() {
           </div>
         </div>
         <div className={`${styles.archNote} ${styles.wrap}`}>
-          <span>The frontend does not replace Protocol SIFT.</span> It visualizes the outputs produced by the SIFT/agent investigation run.
+          <span>The frontend visualizes generated outputs:</span> final report, accuracy report, claims, timeline, response plan, tool logs, and context integrity report.
         </div>
       </section>
 
@@ -329,7 +341,7 @@ export default function AstraGridLanding() {
           <div className={styles.fhHeading}>
             <div className={`${styles.eyebrow} ${styles.eyebrowCenter}`}>Roadmap</div>
             <h2>Future <em>Capability</em></h2>
-            <p>What AstraGrid grows into — each branch is a planned extension beyond the current prototype.</p>
+            <p>From cyber-physical investigation to evidence-bound autonomous response — each branch deepens trust, context, and operational safety.</p>
           </div>
           <div className={styles.tree}>
             <div className={styles.treeTrunk}>

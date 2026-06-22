@@ -7,6 +7,7 @@ const POWER_GRID_PROOF_LINK =
 const WATER_UTILITY_PROOF_LINK = 'https://vimeo.com/1202363127';
 const NETWORK_ENDPOINT_PROOF_LINK = 'https://vimeo.com/1202363466';
 const INFRASTRUCTURE_DEPENDENCY_PROOF_LINK = 'https://vimeo.com/1202363797';
+const WADI_CONTEXT_PROOF_LINK = 'https://vimeo.com/1203321133';
 
 const WATER_UTILITY_DOC_LINK =
   '/doc_of_proof/Water%20Utility%20Evidence%20Proof.docx';
@@ -16,6 +17,9 @@ const NETWORK_ENDPOINT_DOC_LINK =
 
 const INFRASTRUCTURE_DEPENDENCY_DOC_LINK =
   '/doc_of_proof/Infrastructure%20Dependency%20Graph%20Proof.docx';
+
+const WADI_CONTEXT_DOC_LINK =
+  '/doc_of_proof/vm_context_integrity_proof.md';
 
 /* ── DATA ── */
 const VB_ROWS = [
@@ -27,6 +31,76 @@ const VB_ROWS = [
 ];
 
 const EV_SECTIONS = [
+  {
+    id: 0,
+    flip: false,
+    eyebrow: 'Step 00 · Context Integrity + WADI',
+    h2: ['Context Integrity', 'WADI Adapter'],
+    situation:
+      'A cyber-physical conclusion can collapse if sensor mapping, actuator mapping, timestamp context, dependency context, or command-path context is missing. AstraGrid checks this context before promoting high-risk claims.',
+    checks: [
+      'Water treatment context present',
+      'Water distribution context present',
+      'WADI optional adapter accepted',
+      'Sensor, actuator, timestamp, and dependency context validated',
+      'Direct command path remains unsupported',
+    ],
+    result:
+      'Context integrity is STRONG. WADI strengthens the water-distribution context, but it does not prove a direct water cyberattack.',
+    tool: 'Context Integrity: context_integrity_report.json',
+    run: 'WADI Config: configs/column_maps/wadi_optional.json',
+    buttons: [
+      {
+        label: 'Watch WADI Context Proof →',
+        ghost: false,
+        href: WADI_CONTEXT_PROOF_LINK,
+      },
+      {
+        label: 'Open Context Proof Doc →',
+        ghost: true,
+        href: WADI_CONTEXT_DOC_LINK,
+      },
+    ],
+    cards: [
+      {
+        icon: '🧭',
+        label: 'Context Integrity',
+        val: null,
+        valPill: { text: 'STRONG', cls: 'vc' },
+        sub: 'Sensor, actuator, timestamp, dependency, and water context validated',
+        subStyle: { marginTop: 8 },
+      },
+      {
+        icon: '💧',
+        label: 'WADI Optional Adapter',
+        val: null,
+        valPill: { text: 'ACCEPTED', cls: 'vc' },
+        sub: 'Large-scale water-distribution context added as optional adapter',
+        subStyle: { marginTop: 8 },
+      },
+      {
+        icon: '🎯',
+        label: 'Direct Command Path',
+        val: null,
+        valPill: { text: 'UNSUPPORTED', cls: 'vu' },
+        sub: 'WADI does not prove direct PLC or SCADA command causality',
+        subStyle: { marginTop: 8 },
+      },
+    ],
+    extras: [
+      {
+        red: false,
+        amber: true,
+        label: 'Claim Boundary',
+        val: 'WADI strengthens context · does not prove direct attack',
+      },
+      {
+        red: false,
+        label: 'Safety Boundary',
+        val: 'Country attribution not claimed · destructive response requires human approval',
+      },
+    ],
+  },
   {
     id: 1,
     flip: false,
@@ -204,36 +278,43 @@ const TL_STEPS = [
   },
   {
     num: '02',
+    title: 'Water Evidence Check',
+    body: 'Water treatment and distribution evidence existed, but the loaded sample did not prove a direct water attack.',
+    badge: 'WATER CHECKED',
+    badgeCls: 'tbGreen',
+  },
+  {
+    num: '03',
     title: 'Gap Detection',
-    body: 'Network evidence did not prove direct water command path. No direct PLC or SCADA path confirmed.',
+    body: 'Network evidence did not prove a direct PLC or SCADA command path into the water system.',
     badge: 'GAP DETECTED',
     badgeCls: 'tbAmber',
   },
   {
-    num: '03',
+    num: '04',
+    title: 'Context Integrity Check',
+    body: 'AstraGrid validated water, WADI, sensor, actuator, timestamp, and dependency context before promoting claims.',
+    badge: 'CONTEXT STRONG',
+    badgeCls: 'tbGreen',
+  },
+  {
+    num: '05',
     title: 'Context Expansion',
     body: 'Power evidence checked — power-grid event confirmed upstream from the water anomaly.',
     badge: 'POWER CONFIRMED',
     badgeCls: 'tbGreen',
   },
   {
-    num: '04',
-    title: 'Host Evidence Check',
-    body: 'Endpoint defense evasion confirmed — audit log clearing detected on engineering workstation.',
-    badge: 'EVASION CONFIRMED',
-    badgeCls: 'tbGreen',
-  },
-  {
-    num: '05',
+    num: '06',
     title: 'Dependency Check',
     body: 'Power Substation 01 confirmed to supply power to Water Pump Station 03 — dependency path present.',
     badge: 'CASCADE PATH FOUND',
     badgeCls: 'tbGreen',
   },
   {
-    num: '06',
+    num: '07',
     title: 'Corrected Conclusion',
-    body: 'Direct water attack UNSUPPORTED. Power-to-water cascade PARTIALLY CONFIRMED. Hypothesis revised.',
+    body: 'Direct water attack UNSUPPORTED. Power-to-water cascade PARTIALLY CONFIRMED. Destructive response requires human approval.',
     badge: 'SELF-CORRECTED ↻',
     badgeCls: 'tbGreen',
   },
@@ -260,6 +341,7 @@ const VS_INFO_CARDS = [
 const VM_CLAIMS = [
   { name: 'Direct water cyberattack', cls: 'vu', pill: 'UNSUPPORTED' },
   { name: 'Power-to-water cascade', cls: 'vp2', pill: 'PARTIALLY CONFIRMED' },
+  { name: 'Context integrity', cls: 'vc', pill: 'STRONG' },
   { name: 'Power-grid evidence', cls: 'vc', pill: 'CONFIRMED' },
   { name: 'Water utility evidence', cls: 'vc', pill: 'CONFIRMED' },
   { name: 'Endpoint defense evasion', cls: 'vc', pill: 'CONFIRMED' },
@@ -335,9 +417,8 @@ export default function AstraGridDemo() {
       {EV_SECTIONS.map((sec, idx) => (
         <section
           key={sec.id}
-          className={`${styles.evidenceSection} ${
-            idx % 2 === 0 ? styles.evidenceSectionOdd : styles.evidenceSectionEven
-          }`}
+          className={`${styles.evidenceSection} ${idx % 2 === 0 ? styles.evidenceSectionOdd : styles.evidenceSectionEven
+            }`}
         >
           <div className={styles.wrap}>
             <div className={`${styles.evGrid} ${sec.flip ? styles.evGridFlip : ''}`}>
@@ -417,18 +498,17 @@ export default function AstraGridDemo() {
                   </div>
                 ))}
 
-                {sec.extras.map((ex, i) => (
+                {sec.extras.map((ex) => (
                   <div
-                    key={i}
-                    className={`${styles.findingCard} ${
-                      ex.red === false && !ex.amber ? styles.findingCardGreen : ''
-                    }`}
+                    key={ex.label}
+                    className={`${styles.findingCard} ${ex.red === false && !ex.amber ? styles.findingCardGreen : ''
+                      }`}
                     style={
                       ex.amber
                         ? {
-                            background: 'rgba(255,176,32,.06)',
-                            borderColor: 'rgba(255,176,32,.2)',
-                          }
+                          background: 'rgba(255,176,32,.06)',
+                          borderColor: 'rgba(255,176,32,.2)',
+                        }
                         : {}
                     }
                   >
@@ -469,6 +549,7 @@ export default function AstraGridDemo() {
                 letterSpacing: '-.01em',
                 marginBottom: 18,
                 lineHeight: 0.95,
+                color: '#fff',
               }}
             >
               Infrastructure
@@ -578,7 +659,7 @@ export default function AstraGridDemo() {
               Self-Correction <em>Timeline</em>
             </h2>
 
-            <p>6 correction steps from initial wrong hypothesis to evidence-backed conclusion.</p>
+            <p>7 reasoning steps from initial wrong hypothesis to context-validated conclusion.</p>
           </div>
 
           <div className={styles.timeline}>
@@ -618,7 +699,16 @@ export default function AstraGridDemo() {
             {VS_INFO_CARDS.map((c) => (
               <div key={c.title} className={styles.vsInfoCard}>
                 <span className={styles.vsCardIcon}>{c.icon}</span>
-                <div className={styles.vsCardTitle}>{c.title.replace('\n', '\u000A')}</div>
+
+                <div className={styles.vsCardTitle}>
+                  {c.title.split('\n').map((line) => (
+                    <span key={line}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </div>
+
                 <div className={styles.vsCardBody}>{c.body}</div>
               </div>
             ))}
@@ -670,7 +760,7 @@ export default function AstraGridDemo() {
             </div>
 
             <div className={styles.vmBtnRow}>
-              <a href="#" className={`${styles.evBtn} ${styles.evBtnGhost}`}>
+              <a href={WADI_CONTEXT_DOC_LINK} className={`${styles.evBtn} ${styles.evBtnGhost}`}>
                 View Full Report
               </a>
             </div>

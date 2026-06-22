@@ -11,6 +11,8 @@
   left: 0;
   z-index: 100;
 
+  box-sizing: border-box;
+
   background: rgba(8, 5, 20, 0.72);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -22,16 +24,35 @@
   font-weight: 800;
   letter-spacing: 0.04em;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo::first-letter {
   color: #ff174d;
 }
 
-.rightText {
-  color: #b8a7ff;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.rightLogoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+
+  width: 220px;
+  height: 48px;
+
+  background: transparent;
+  overflow: hidden;
+}
+
+.rightLogo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+
+  background: transparent;
+
+  /* this helps dark background merge */
+  mix-blend-mode: screen;
+  opacity: 0.96;
 }

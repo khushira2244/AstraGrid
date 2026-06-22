@@ -8,8 +8,12 @@ function Header() {
         AstraGrid
       </Link>
 
-      <div className={styles.rightText}>
-        SANS &amp; SIFT Station
+      <div className={styles.rightLogoWrap}>
+        <img
+          src="/logo.png"
+          alt="SANS & SIFT"
+          className={styles.rightLogo}
+        />
       </div>
     </header>
   );
